@@ -38,7 +38,12 @@ namespace TP_WinformCatalogo
             this.tsmiBuscarArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiListarArticulos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVerDetalleArticulos = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvArticulos = new System.Windows.Forms.DataGridView();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -111,11 +116,50 @@ namespace TP_WinformCatalogo
             this.tsmiVerDetalleArticulos.Size = new System.Drawing.Size(197, 22);
             this.tsmiVerDetalleArticulos.Text = "Ver detalles de articulos";
             // 
+            // dgvArticulos
+            // 
+            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.Location = new System.Drawing.Point(12, 69);
+            this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.Size = new System.Drawing.Size(547, 244);
+            this.dgvArticulos.TabIndex = 1;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(12, 335);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(111, 37);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(148, 335);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(111, 37);
+            this.btnModificar.TabIndex = 3;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(286, 335);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(111, 37);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmArticulos";
@@ -123,6 +167,7 @@ namespace TP_WinformCatalogo
             this.Load += new System.EventHandler(this.frmArticulos_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +184,9 @@ namespace TP_WinformCatalogo
         private System.Windows.Forms.ToolStripMenuItem tsmiBuscarArticulo;
         private System.Windows.Forms.ToolStripMenuItem tsmiListarArticulos;
         private System.Windows.Forms.ToolStripMenuItem tsmiVerDetalleArticulos;
+        private System.Windows.Forms.DataGridView dgvArticulos;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
