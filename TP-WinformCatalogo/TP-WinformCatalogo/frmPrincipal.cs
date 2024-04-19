@@ -35,6 +35,6 @@ namespace TP_WinformCatalogo
             ventana.ShowDialog();
         }
 
-        
+      
     }
 }

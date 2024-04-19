@@ -120,6 +120,7 @@ namespace TP_WinformCatalogo
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmArticulos";
             this.Text = "Articulos";
+            this.Load += new System.EventHandler(this.frmArticulos_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

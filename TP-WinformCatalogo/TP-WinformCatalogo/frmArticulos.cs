@@ -17,5 +17,9 @@ namespace TP_WinformCatalogo
             InitializeComponent();
         }
 
+        private void frmArticulos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

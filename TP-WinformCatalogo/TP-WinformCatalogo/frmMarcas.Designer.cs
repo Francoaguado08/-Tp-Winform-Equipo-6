@@ -29,114 +29,107 @@ namespace TP_WinformCatalogo
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.accionesImportantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAgregarMarca = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEliminarMarca = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiModificarMarca = new System.Windows.Forms.ToolStripMenuItem();
-            this.busquedaYListadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiBuscarMarca = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiListarMarcas = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiVerDetalleMarcas = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblMarcasDisponibles = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // dataGridView1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.accionesImportantesToolStripMenuItem,
-            this.busquedaYListadoToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 92);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(560, 255);
+            this.dataGridView1.TabIndex = 1;
             // 
-            // accionesImportantesToolStripMenuItem
+            // lblMarcasDisponibles
             // 
-            this.accionesImportantesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAgregarMarca,
-            this.tsmiEliminarMarca,
-            this.tsmiModificarMarca});
-            this.accionesImportantesToolStripMenuItem.Name = "accionesImportantesToolStripMenuItem";
-            this.accionesImportantesToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
-            this.accionesImportantesToolStripMenuItem.Text = "&Acciones Importantes";
+            this.lblMarcasDisponibles.AutoSize = true;
+            this.lblMarcasDisponibles.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarcasDisponibles.Location = new System.Drawing.Point(-3, 60);
+            this.lblMarcasDisponibles.Name = "lblMarcasDisponibles";
+            this.lblMarcasDisponibles.Size = new System.Drawing.Size(236, 25);
+            this.lblMarcasDisponibles.TabIndex = 2;
+            this.lblMarcasDisponibles.Text = "Marcas Disponibles:";
             // 
-            // tsmiAgregarMarca
+            // btnAgregar
             // 
-            this.tsmiAgregarMarca.Name = "tsmiAgregarMarca";
-            this.tsmiAgregarMarca.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D1)));
-            this.tsmiAgregarMarca.Size = new System.Drawing.Size(197, 22);
-            this.tsmiAgregarMarca.Text = "Agregar marca";
+            this.btnAgregar.Location = new System.Drawing.Point(12, 366);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // tsmiEliminarMarca
+            // btnModificar
             // 
-            this.tsmiEliminarMarca.Name = "tsmiEliminarMarca";
-            this.tsmiEliminarMarca.Size = new System.Drawing.Size(180, 22);
-            this.tsmiEliminarMarca.Text = "Eliminar marca";
+            this.btnModificar.Location = new System.Drawing.Point(119, 366);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 4;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // tsmiModificarMarca
+            // btnEliminar
             // 
-            this.tsmiModificarMarca.Name = "tsmiModificarMarca";
-            this.tsmiModificarMarca.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D2)));
-            this.tsmiModificarMarca.Size = new System.Drawing.Size(197, 22);
-            this.tsmiModificarMarca.Text = "Modificar marca";
+            this.btnEliminar.Location = new System.Drawing.Point(226, 366);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // busquedaYListadoToolStripMenuItem
+            // comboBox1
             // 
-            this.busquedaYListadoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiBuscarMarca,
-            this.tsmiListarMarcas,
-            this.tsmiVerDetalleMarcas});
-            this.busquedaYListadoToolStripMenuItem.Name = "busquedaYListadoToolStripMenuItem";
-            this.busquedaYListadoToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
-            this.busquedaYListadoToolStripMenuItem.Text = "&Busqueda y listado";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(239, 64);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
             // 
-            // tsmiBuscarMarca
+            // pictureBox1
             // 
-            this.tsmiBuscarMarca.Name = "tsmiBuscarMarca";
-            this.tsmiBuscarMarca.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-            this.tsmiBuscarMarca.Size = new System.Drawing.Size(185, 22);
-            this.tsmiBuscarMarca.Text = "Buscar marca";
-            // 
-            // tsmiListarMarcas
-            // 
-            this.tsmiListarMarcas.Name = "tsmiListarMarcas";
-            this.tsmiListarMarcas.Size = new System.Drawing.Size(185, 22);
-            this.tsmiListarMarcas.Text = "Listar marcas";
-            // 
-            // tsmiVerDetalleMarcas
-            // 
-            this.tsmiVerDetalleMarcas.Name = "tsmiVerDetalleMarcas";
-            this.tsmiVerDetalleMarcas.Size = new System.Drawing.Size(185, 22);
-            this.tsmiVerDetalleMarcas.Text = "Ver detalle de marcas";
+            this.pictureBox1.Location = new System.Drawing.Point(566, 92);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(222, 255);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // frmMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.lblMarcasDisponibles);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "frmMarcas";
             this.Text = "Marcas";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem accionesImportantesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem busquedaYListadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAgregarMarca;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEliminarMarca;
-        private System.Windows.Forms.ToolStripMenuItem tsmiModificarMarca;
-        private System.Windows.Forms.ToolStripMenuItem tsmiBuscarMarca;
-        private System.Windows.Forms.ToolStripMenuItem tsmiListarMarcas;
-        private System.Windows.Forms.ToolStripMenuItem tsmiVerDetalleMarcas;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblMarcasDisponibles;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
