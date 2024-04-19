@@ -11,7 +11,7 @@ namespace TP_WinformCatalogo
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        /// prueba commit de simon
+        
         [STAThread]
         static void Main()
         {
