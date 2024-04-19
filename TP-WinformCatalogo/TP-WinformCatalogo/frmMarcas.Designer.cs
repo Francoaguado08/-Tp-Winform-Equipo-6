@@ -29,107 +29,151 @@ namespace TP_WinformCatalogo
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridMarcas = new System.Windows.Forms.DataGridView();
             this.lblMarcasDisponibles = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnAgregarMarcas = new System.Windows.Forms.Button();
+            this.btnModificarMarcas = new System.Windows.Forms.Button();
+            this.btnEliminarMarcas = new System.Windows.Forms.Button();
+            this.comboBxMarcas = new System.Windows.Forms.ComboBox();
+            this.pictureBoxMarcas = new System.Windows.Forms.PictureBox();
+            this.cbBuscarMarca = new System.Windows.Forms.CheckBox();
+            this.cbVerDetalleMarcas = new System.Windows.Forms.CheckBox();
+            this.cbListarMarcas = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMarcas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMarcas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridMarcas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(560, 255);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMarcas.Location = new System.Drawing.Point(6, 100);
+            this.dataGridMarcas.Name = "dataGridMarcas";
+            this.dataGridMarcas.Size = new System.Drawing.Size(547, 244);
+            this.dataGridMarcas.TabIndex = 1;
             // 
             // lblMarcasDisponibles
             // 
             this.lblMarcasDisponibles.AutoSize = true;
             this.lblMarcasDisponibles.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcasDisponibles.Location = new System.Drawing.Point(-3, 60);
+            this.lblMarcasDisponibles.Location = new System.Drawing.Point(6, 60);
             this.lblMarcasDisponibles.Name = "lblMarcasDisponibles";
             this.lblMarcasDisponibles.Size = new System.Drawing.Size(236, 25);
             this.lblMarcasDisponibles.TabIndex = 2;
             this.lblMarcasDisponibles.Text = "Marcas Disponibles:";
             // 
-            // btnAgregar
+            // btnAgregarMarcas
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(12, 366);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 3;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregarMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarMarcas.Location = new System.Drawing.Point(18, 367);
+            this.btnAgregarMarcas.Name = "btnAgregarMarcas";
+            this.btnAgregarMarcas.Size = new System.Drawing.Size(111, 37);
+            this.btnAgregarMarcas.TabIndex = 3;
+            this.btnAgregarMarcas.Text = "Agregar";
+            this.btnAgregarMarcas.UseVisualStyleBackColor = true;
             // 
-            // btnModificar
+            // btnModificarMarcas
             // 
-            this.btnModificar.Location = new System.Drawing.Point(119, 366);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 4;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificarMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarMarcas.Location = new System.Drawing.Point(148, 367);
+            this.btnModificarMarcas.Name = "btnModificarMarcas";
+            this.btnModificarMarcas.Size = new System.Drawing.Size(111, 37);
+            this.btnModificarMarcas.TabIndex = 4;
+            this.btnModificarMarcas.Text = "Modificar";
+            this.btnModificarMarcas.UseVisualStyleBackColor = true;
             // 
-            // btnEliminar
+            // btnEliminarMarcas
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(226, 366);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminarMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarMarcas.Location = new System.Drawing.Point(286, 367);
+            this.btnEliminarMarcas.Name = "btnEliminarMarcas";
+            this.btnEliminarMarcas.Size = new System.Drawing.Size(111, 37);
+            this.btnEliminarMarcas.TabIndex = 5;
+            this.btnEliminarMarcas.Text = "Eliminar";
+            this.btnEliminarMarcas.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboBxMarcas
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(239, 64);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
+            this.comboBxMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBxMarcas.FormattingEnabled = true;
+            this.comboBxMarcas.Location = new System.Drawing.Point(245, 60);
+            this.comboBxMarcas.Name = "comboBxMarcas";
+            this.comboBxMarcas.Size = new System.Drawing.Size(121, 21);
+            this.comboBxMarcas.TabIndex = 6;
             // 
-            // pictureBox1
+            // pictureBoxMarcas
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(566, 92);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(222, 255);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxMarcas.Location = new System.Drawing.Point(572, 100);
+            this.pictureBoxMarcas.Name = "pictureBoxMarcas";
+            this.pictureBoxMarcas.Size = new System.Drawing.Size(222, 244);
+            this.pictureBoxMarcas.TabIndex = 7;
+            this.pictureBoxMarcas.TabStop = false;
+            // 
+            // cbBuscarMarca
+            // 
+            this.cbBuscarMarca.AutoSize = true;
+            this.cbBuscarMarca.Location = new System.Drawing.Point(372, 15);
+            this.cbBuscarMarca.Name = "cbBuscarMarca";
+            this.cbBuscarMarca.Size = new System.Drawing.Size(157, 17);
+            this.cbBuscarMarca.TabIndex = 8;
+            this.cbBuscarMarca.Text = "Buscar marca seleccionada";
+            this.cbBuscarMarca.UseVisualStyleBackColor = true;
+            // 
+            // cbVerDetalleMarcas
+            // 
+            this.cbVerDetalleMarcas.AutoSize = true;
+            this.cbVerDetalleMarcas.Location = new System.Drawing.Point(372, 39);
+            this.cbVerDetalleMarcas.Name = "cbVerDetalleMarcas";
+            this.cbVerDetalleMarcas.Size = new System.Drawing.Size(189, 17);
+            this.cbVerDetalleMarcas.TabIndex = 9;
+            this.cbVerDetalleMarcas.Text = "Ver detalle de marca seleccionada";
+            this.cbVerDetalleMarcas.UseVisualStyleBackColor = true;
+            // 
+            // cbListarMarcas
+            // 
+            this.cbListarMarcas.AutoSize = true;
+            this.cbListarMarcas.Location = new System.Drawing.Point(372, 62);
+            this.cbListarMarcas.Name = "cbListarMarcas";
+            this.cbListarMarcas.Size = new System.Drawing.Size(133, 17);
+            this.cbListarMarcas.TabIndex = 10;
+            this.cbListarMarcas.Text = "Listar todas las marcas";
+            this.cbListarMarcas.UseVisualStyleBackColor = true;
             // 
             // frmMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.cbListarMarcas);
+            this.Controls.Add(this.cbVerDetalleMarcas);
+            this.Controls.Add(this.cbBuscarMarca);
+            this.Controls.Add(this.pictureBoxMarcas);
+            this.Controls.Add(this.comboBxMarcas);
+            this.Controls.Add(this.btnEliminarMarcas);
+            this.Controls.Add(this.btnModificarMarcas);
+            this.Controls.Add(this.btnAgregarMarcas);
             this.Controls.Add(this.lblMarcasDisponibles);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridMarcas);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "frmMarcas";
             this.Text = "Marcas";
-            
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMarcas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMarcas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridMarcas;
         private System.Windows.Forms.Label lblMarcasDisponibles;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAgregarMarcas;
+        private System.Windows.Forms.Button btnModificarMarcas;
+        private System.Windows.Forms.Button btnEliminarMarcas;
+        private System.Windows.Forms.ComboBox comboBxMarcas;
+        private System.Windows.Forms.PictureBox pictureBoxMarcas;
+        private System.Windows.Forms.CheckBox cbBuscarMarca;
+        private System.Windows.Forms.CheckBox cbVerDetalleMarcas;
+        private System.Windows.Forms.CheckBox cbListarMarcas;
     }
 }

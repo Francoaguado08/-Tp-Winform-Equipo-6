@@ -16,10 +16,13 @@ namespace TP_WinformCatalogo
         public List <Articulo> listar() //Metodo que devuelve una lista.
         {
             List<Articulo> lista = new List<Articulo>(); //(1)Creo mi lista.
+
             //Yo voy a necesitar conectarme a algun lado:
             SqlConnection conexion = new SqlConnection(); //(2) Creo mi conexion.
+
             //Una vez conectado voy a necesitar realizar comandos:
             SqlCommand comando = new SqlCommand();  //(3) Creo mis comandos.
+            
             /*LLEGANDO a esta instancia, voy a tener en la BD un set de datos que lo voy a a alojar en mi
             lector.. Yo cuando realize la lectura voy a obtener la instancia de un OBJ de tipo sqlDataReader.*/
             SqlDataReader lector; //Lo prox es configurarlo.
@@ -68,7 +71,7 @@ namespace TP_WinformCatalogo
                 
                 
                 
-                throw ex;
+               throw ex;
             }
 
 

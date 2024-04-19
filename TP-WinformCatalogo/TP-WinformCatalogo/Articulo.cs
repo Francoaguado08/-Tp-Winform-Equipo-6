@@ -18,6 +18,6 @@ namespace TP_WinformCatalogo
         public decimal Precio { get; set; }
 
         /*Recordemos que el comboBox (el desplegable que nos pide) ya tiene que tener cargado sus ITEMS 
-        en el LOAD.)? */
+        en el LOAD.? */
     }
 }

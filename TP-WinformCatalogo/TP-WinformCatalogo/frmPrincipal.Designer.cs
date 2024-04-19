@@ -76,22 +76,24 @@
             // 
             // lblCatalogo
             // 
+            this.lblCatalogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCatalogo.AutoSize = true;
-            this.lblCatalogo.Font = new System.Drawing.Font("Showcard Gothic", 36F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCatalogo.Location = new System.Drawing.Point(243, 30);
+            this.lblCatalogo.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCatalogo.Location = new System.Drawing.Point(264, 27);
             this.lblCatalogo.Name = "lblCatalogo";
-            this.lblCatalogo.Size = new System.Drawing.Size(267, 60);
+            this.lblCatalogo.Size = new System.Drawing.Size(212, 60);
             this.lblCatalogo.TabIndex = 3;
             this.lblCatalogo.Text = "CATALOGO";
             this.lblCatalogo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MV Boli", 36F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(135, 186);
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 36F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(135, 177);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(461, 63);
+            this.label1.Size = new System.Drawing.Size(485, 64);
             this.label1.TabIndex = 4;
             this.label1.Text = "ADMINISTRACION:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;

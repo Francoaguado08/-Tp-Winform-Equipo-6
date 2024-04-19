@@ -17,6 +17,5 @@ namespace TP_WinformCatalogo
             InitializeComponent();
         }
 
-        
     }
 }
