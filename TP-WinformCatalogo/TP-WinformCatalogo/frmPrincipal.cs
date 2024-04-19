@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace TP_WinformCatalogo
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
-        public Form1()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
+
+        private void btnArticulos_Click(object sender, EventArgs e)
+        {
+            frmArticulos ventana = new frmArticulos();
+            ventana.ShowDialog();
+        }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+            frmMarcas ventana = new frmMarcas();
+            ventana.ShowDialog();
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            frmCategorias ventana = new frmCategorias();
+            ventana.ShowDialog();
+        }
+
+        
     }
 }
