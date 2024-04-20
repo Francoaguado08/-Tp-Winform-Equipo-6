@@ -44,9 +44,10 @@ namespace TP_WinformCatalogo
             // cbListarCategorias
             // 
             this.cbListarCategorias.AutoSize = true;
-            this.cbListarCategorias.Location = new System.Drawing.Point(416, 67);
+            this.cbListarCategorias.Location = new System.Drawing.Point(555, 82);
+            this.cbListarCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbListarCategorias.Name = "cbListarCategorias";
-            this.cbListarCategorias.Size = new System.Drawing.Size(148, 17);
+            this.cbListarCategorias.Size = new System.Drawing.Size(196, 21);
             this.cbListarCategorias.TabIndex = 24;
             this.cbListarCategorias.Text = "Listar todos las categorias";
             this.cbListarCategorias.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@ namespace TP_WinformCatalogo
             // cbVerDetalleCategorias
             // 
             this.cbVerDetalleCategorias.AutoSize = true;
-            this.cbVerDetalleCategorias.Location = new System.Drawing.Point(416, 44);
+            this.cbVerDetalleCategorias.Location = new System.Drawing.Point(555, 54);
+            this.cbVerDetalleCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbVerDetalleCategorias.Name = "cbVerDetalleCategorias";
-            this.cbVerDetalleCategorias.Size = new System.Drawing.Size(204, 17);
+            this.cbVerDetalleCategorias.Size = new System.Drawing.Size(268, 21);
             this.cbVerDetalleCategorias.TabIndex = 23;
             this.cbVerDetalleCategorias.Text = "Ver detalle de categoria seleccionada";
             this.cbVerDetalleCategorias.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@ namespace TP_WinformCatalogo
             // cbBuscarCategoria
             // 
             this.cbBuscarCategoria.AutoSize = true;
-            this.cbBuscarCategoria.Location = new System.Drawing.Point(416, 20);
+            this.cbBuscarCategoria.Location = new System.Drawing.Point(555, 25);
+            this.cbBuscarCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbBuscarCategoria.Name = "cbBuscarCategoria";
-            this.cbBuscarCategoria.Size = new System.Drawing.Size(172, 17);
+            this.cbBuscarCategoria.Size = new System.Drawing.Size(224, 21);
             this.cbBuscarCategoria.TabIndex = 22;
             this.cbBuscarCategoria.Text = "Buscar categoria seleccionado";
             this.cbBuscarCategoria.UseVisualStyleBackColor = true;
@@ -75,27 +78,30 @@ namespace TP_WinformCatalogo
             // 
             this.cmbxMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbxMarcas.FormattingEnabled = true;
-            this.cmbxMarcas.Location = new System.Drawing.Point(289, 60);
+            this.cmbxMarcas.Location = new System.Drawing.Point(385, 74);
+            this.cmbxMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbxMarcas.Name = "cmbxMarcas";
-            this.cmbxMarcas.Size = new System.Drawing.Size(121, 21);
+            this.cmbxMarcas.Size = new System.Drawing.Size(160, 24);
             this.cmbxMarcas.TabIndex = 21;
             // 
             // lblCategoriasDisponibles
             // 
             this.lblCategoriasDisponibles.AutoSize = true;
             this.lblCategoriasDisponibles.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriasDisponibles.Location = new System.Drawing.Point(12, 60);
+            this.lblCategoriasDisponibles.Location = new System.Drawing.Point(16, 74);
+            this.lblCategoriasDisponibles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoriasDisponibles.Name = "lblCategoriasDisponibles";
-            this.lblCategoriasDisponibles.Size = new System.Drawing.Size(278, 25);
+            this.lblCategoriasDisponibles.Size = new System.Drawing.Size(362, 32);
             this.lblCategoriasDisponibles.TabIndex = 20;
             this.lblCategoriasDisponibles.Text = "Categorias Disponibles:";
             // 
             // btnEliminarCategorias
             // 
             this.btnEliminarCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarCategorias.Location = new System.Drawing.Point(286, 367);
+            this.btnEliminarCategorias.Location = new System.Drawing.Point(381, 452);
+            this.btnEliminarCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminarCategorias.Name = "btnEliminarCategorias";
-            this.btnEliminarCategorias.Size = new System.Drawing.Size(111, 37);
+            this.btnEliminarCategorias.Size = new System.Drawing.Size(148, 46);
             this.btnEliminarCategorias.TabIndex = 19;
             this.btnEliminarCategorias.Text = "Eliminar";
             this.btnEliminarCategorias.UseVisualStyleBackColor = true;
@@ -103,9 +109,10 @@ namespace TP_WinformCatalogo
             // btnModificarCategorias
             // 
             this.btnModificarCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificarCategorias.Location = new System.Drawing.Point(148, 367);
+            this.btnModificarCategorias.Location = new System.Drawing.Point(197, 452);
+            this.btnModificarCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificarCategorias.Name = "btnModificarCategorias";
-            this.btnModificarCategorias.Size = new System.Drawing.Size(111, 37);
+            this.btnModificarCategorias.Size = new System.Drawing.Size(148, 46);
             this.btnModificarCategorias.TabIndex = 18;
             this.btnModificarCategorias.Text = "Modificar";
             this.btnModificarCategorias.UseVisualStyleBackColor = true;
@@ -113,9 +120,10 @@ namespace TP_WinformCatalogo
             // btnAgregarCategorias
             // 
             this.btnAgregarCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarCategorias.Location = new System.Drawing.Point(12, 367);
+            this.btnAgregarCategorias.Location = new System.Drawing.Point(16, 452);
+            this.btnAgregarCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregarCategorias.Name = "btnAgregarCategorias";
-            this.btnAgregarCategorias.Size = new System.Drawing.Size(111, 37);
+            this.btnAgregarCategorias.Size = new System.Drawing.Size(148, 46);
             this.btnAgregarCategorias.TabIndex = 17;
             this.btnAgregarCategorias.Text = "Agregar";
             this.btnAgregarCategorias.UseVisualStyleBackColor = true;
@@ -123,16 +131,18 @@ namespace TP_WinformCatalogo
             // dgvCategorias
             // 
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Location = new System.Drawing.Point(12, 101);
+            this.dgvCategorias.Location = new System.Drawing.Point(16, 124);
+            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCategorias.Name = "dgvCategorias";
-            this.dgvCategorias.Size = new System.Drawing.Size(547, 244);
+            this.dgvCategorias.RowHeadersWidth = 51;
+            this.dgvCategorias.Size = new System.Drawing.Size(729, 300);
             this.dgvCategorias.TabIndex = 16;
             // 
             // frmCategorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1064, 544);
             this.Controls.Add(this.cbListarCategorias);
             this.Controls.Add(this.cbVerDetalleCategorias);
             this.Controls.Add(this.cbBuscarCategoria);
@@ -142,10 +152,12 @@ namespace TP_WinformCatalogo
             this.Controls.Add(this.btnModificarCategorias);
             this.Controls.Add(this.btnAgregarCategorias);
             this.Controls.Add(this.dgvCategorias);
-            this.MaximumSize = new System.Drawing.Size(816, 489);
-            this.MinimumSize = new System.Drawing.Size(816, 489);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(1082, 591);
+            this.MinimumSize = new System.Drawing.Size(1082, 591);
             this.Name = "frmCategorias";
             this.Text = "Categorias";
+            this.Load += new System.EventHandler(this.frmCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

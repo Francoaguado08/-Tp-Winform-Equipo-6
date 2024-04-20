@@ -10,7 +10,6 @@ namespace TP_WinformCatalogo
     {
         //Agrego los constructores, uno sin parametros que se carga vacio 
         //y otro con los parametros que se le carguen.
-        // (en la BD a lo que nosotros le llamamos "Nombre", figura como "Descripcion")
        public Categoria()
         {
             ID = 0;

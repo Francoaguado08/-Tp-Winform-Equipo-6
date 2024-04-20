@@ -16,5 +16,11 @@ namespace TP_WinformCatalogo
         {
             InitializeComponent();
         }
+
+        private void frmCategorias_Load(object sender, EventArgs e)
+        {
+            CategoriaNegocio negocio = new CategoriaNegocio();
+            dgvCategorias.DataSource = negocio.listar();
+        }
     }
 }

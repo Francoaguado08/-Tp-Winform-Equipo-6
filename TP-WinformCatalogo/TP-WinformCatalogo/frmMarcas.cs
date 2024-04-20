@@ -22,6 +22,7 @@ namespace TP_WinformCatalogo
             MarcasNegocio negocio = new MarcasNegocio();
             dgvMarcas.DataSource = negocio.listar();
         }
+
     }
 }
 
