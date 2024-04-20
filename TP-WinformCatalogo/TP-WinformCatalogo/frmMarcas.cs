@@ -17,5 +17,11 @@ namespace TP_WinformCatalogo
             InitializeComponent();
         }
 
+        private void frmMarcas_Load(object sender, EventArgs e)
+        {
+            MarcasNegocio negocio = new MarcasNegocio();
+            dgvMarcas.DataSource = negocio.listar();
+        }
     }
 }
+

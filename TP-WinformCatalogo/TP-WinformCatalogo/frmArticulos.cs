@@ -24,9 +24,7 @@ namespace TP_WinformCatalogo
             ArticuloNegocio negocio = new ArticuloNegocio();
             dgvArticulos.DataSource = negocio.listar(); // a la grilla de datos .datasource(origen de datos) le voy a asiganar la lista.
 
-
-
-
         }
+
     }
 }
