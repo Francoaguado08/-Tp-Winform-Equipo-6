@@ -9,13 +9,35 @@ namespace TP_WinformCatalogo
 {
     internal class Articulo
     {
+        //Agrego los constructores, uno sin parametros que se carga vacio 
+        //y otro con los parametros que se le carguen.
+        public Articulo()
+        {
+            Codigo = 0;
+            Nombre = "";
+            Descripcion = "";
+            Precio = 0;
+            Categoria = new Categoria();
+            Marca = new Marca();
+        }
+        public Articulo(string codigo, string nombre, string descripcion, decimal precio, Categoria categoria, Marca marca)
+        {
+            Codigo = codigo;
+            Nombre = nombre;
+            Descripcion = descripcion;
+            Precio = precio;
+            Categoria = categoria;
+            Marca = marca;
+        }
 
         //ATRIBUTOS DE MI CLASE ARTICULO GENERICA.
         public string Codigo { get; set; }
-
         public string Nombre { get; set; }
         public string  Descripcion  { get; set; }
         public decimal Precio { get; set; }
+        public Categoria Categoria { get; set; }
+        public Marca Marca { get; set; }
+       
 
         /*Recordemos que el comboBox (el desplegable que nos pide) ya tiene que tener cargado sus ITEMS 
         en el LOAD.? */
