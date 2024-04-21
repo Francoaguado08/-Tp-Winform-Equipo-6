@@ -34,7 +34,7 @@ namespace TP_WinformCatalogo
                 //(5)Comando para realizar la accion, voy a llevar a cabo la lectura inyectando la secuencia de SQL.
                 comando.CommandType = System.Data.CommandType.Text;
                 //El texto va a ser la consulta de sql.
-                comando.CommandText = "Select Codigo, Nombre, Descripcion, Precio From ARTICULOS";
+                comando.CommandText = "Select Id, Codigo, Nombre, Descripcion, Precio From ARTICULOS";
                 //(6)Ejecuto ese comando en esta conexion.
                 comando.Connection = conexion;  
 
@@ -46,7 +46,7 @@ namespace TP_WinformCatalogo
                 while (lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    //aux.ID = lector.GetInt32(0);
+                    aux.ID = (int)lector["Id"];
                     aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
