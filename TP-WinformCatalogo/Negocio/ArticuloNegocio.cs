@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient; //(0) Agrego esto para la conexion.
+using Dominio;
 
-namespace TP_WinformCatalogo
+namespace Negocio
 {   
 
 
     /// (1) Clase para crear los metodos de acceso a datos para los Articulos...
     ///(2) Los metodos tienen que ser Public para yo poder accederlos desde el exterior.
-    internal class ArticuloNegocio
+    public class ArticuloNegocio
     {
         public List <Articulo> listar() //Metodo que devuelve una lista.
         {

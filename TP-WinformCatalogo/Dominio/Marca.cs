@@ -4,26 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_WinformCatalogo
+namespace Dominio
 {
-    internal class Categoria
+    public class Marca
     {
         //Agrego los constructores, uno sin parametros que se carga vacio 
         //y otro con los parametros que se le carguen.
-       public Categoria()
+        // (en la BD a lo que nosotros le llamamos "Nombre", figura como "Descripcion")
+        public Marca()
         {
             ID = 0;
-            Descripcion = "";
+            Nombre = "";
         }
-        public Categoria(int id, string descripcion)
+        public Marca(int id, string nombre)
         {
             ID = id;
-            Descripcion = descripcion;
+            Nombre = nombre;
         }
         public int ID { get; set; }
-        public string Descripcion { get; set; }
-
-
+        public string Nombre { get; set; }        
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 
 
-namespace TP_WinformCatalogo
+namespace Negocio
 {
     public class AccesoDatos
     {

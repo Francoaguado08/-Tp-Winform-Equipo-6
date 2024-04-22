@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_WinformCatalogo
+namespace Dominio
+
 {
-    internal class Imagen
+    public class Imagen
     {
         public int ID { get; set; } 
         public int IDArticulo { get; set; } 

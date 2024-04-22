@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
+using Dominio;
 
 
+namespace Negocio
 
-namespace TP_WinformCatalogo
 {
-    internal class MarcasNegocio
+    public class MarcasNegocio
     {
         public List <Marca> listar()
         {

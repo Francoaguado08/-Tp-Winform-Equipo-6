@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Negocio;
 namespace TP_WinformCatalogo
 {
     public partial class frmPrincipal : Form

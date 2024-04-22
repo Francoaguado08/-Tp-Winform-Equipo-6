@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_WinformCatalogo
+namespace Dominio
+
 {
-    internal class Articulo
+    public class Articulo
     {
         //Agrego los constructores, uno sin parametros que se carga vacio 
         //y otro con los parametros que se le carguen.
