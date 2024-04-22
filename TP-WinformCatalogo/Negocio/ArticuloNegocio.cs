@@ -21,7 +21,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("Select Id, Codigo, Nombre, Descripcion, Precio From ARTICULOS");
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, I.ImagenUrl FROM ARTICULOS A JOIN IMAGENES I ON A.Id = I.Id");
                 datos.ejecutarLectura();
 
                 //Ahora voy leyendo, si pudo leer ingresa al while y me posiciona el puntero en la siguiente posicion.
@@ -35,7 +35,7 @@ namespace Negocio
                     //aux.Marca = (Marca)datos.Lector["IdMarca"];
                     //aux.Categoria = (Categoria)datos.Lector["IdCategoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-
+                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];    
 
                     lista.Add(aux); //(7)- Finalmente agrego ese articulo a la lisa.
                 }
