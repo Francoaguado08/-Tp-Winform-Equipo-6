@@ -43,7 +43,7 @@ namespace Dominio
         public Categoria Categoria { get; set; }
         public Marca Marca { get; set; }
         public string UrlImagen { get; set; }
-
+        
 
         /*Recordemos que el comboBox (el desplegable que nos pide) ya tiene que tener cargado sus ITEMS 
         en el LOAD.? */

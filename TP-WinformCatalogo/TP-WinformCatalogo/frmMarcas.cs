@@ -24,6 +24,11 @@ namespace TP_WinformCatalogo
             dgvMarcas.DataSource = negocio.listar();
         }
 
+        private void btnAgregarMarcas_Click(object sender, EventArgs e)
+        {
+            frmAltaMarcas ventana = new frmAltaMarcas();
+            ventana.ShowDialog();
+        }
     }
 }
 

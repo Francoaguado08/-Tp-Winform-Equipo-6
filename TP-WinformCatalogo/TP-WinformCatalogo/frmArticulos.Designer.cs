@@ -62,6 +62,7 @@ namespace TP_WinformCatalogo
             this.btnAgregarArticulo.TabIndex = 2;
             this.btnAgregarArticulo.Text = "Agregar";
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
+            this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
             // 
             // btnModificarArticulo
             // 

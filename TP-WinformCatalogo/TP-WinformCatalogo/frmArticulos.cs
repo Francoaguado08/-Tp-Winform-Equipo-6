@@ -71,7 +71,10 @@ namespace TP_WinformCatalogo
 
         }
 
-
-
+        private void btnAgregarArticulo_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulos alta = new frmAltaArticulos();
+            alta.ShowDialog();
+        }
     }
 }

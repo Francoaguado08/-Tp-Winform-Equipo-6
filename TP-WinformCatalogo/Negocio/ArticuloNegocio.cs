@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient; //(0) Agrego esto para la conexion.
 using Dominio;
+using Negocio;
 
 namespace Negocio
 {   
@@ -53,9 +54,28 @@ namespace Negocio
             {
                 datos.cerrarConexion();
             }
+            
 
         }
-    
+        public void agregar(Dominio.Articulo nuevo)
+        {
+            AccesoDatos acceso = new AccesoDatos();
+
+            try
+            {
+
+                acceso.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES ('" + nuevo.Codigo + "','" + nuevo.Nombre + "','" + nuevo.Descripcion + "','" + nuevo.Precio + "'");
+                acceso.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
     }
 
 }
