@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 using Negocio;
 
 namespace TP_WinformCatalogo
@@ -28,6 +29,28 @@ namespace TP_WinformCatalogo
         {
             frmAltaCategorias ventana = new frmAltaCategorias();
             ventana.ShowDialog();
+        }
+
+        private void btnEliminarCategorias_Click(object sender, EventArgs e)
+        {
+            CategoriaNegocio negocio = new CategoriaNegocio();
+            Categoria seleccionada;
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Confirme nuevamente si quiere eliminarlo.", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+                    negocio.eliminarCategoria(seleccionada.ID);
+                    //cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
     }
 }

@@ -99,6 +99,7 @@ namespace TP_WinformCatalogo
             this.btnEliminarCategorias.TabIndex = 19;
             this.btnEliminarCategorias.Text = "Eliminar";
             this.btnEliminarCategorias.UseVisualStyleBackColor = true;
+            this.btnEliminarCategorias.Click += new System.EventHandler(this.btnEliminarCategorias_Click);
             // 
             // btnModificarCategorias
             // 

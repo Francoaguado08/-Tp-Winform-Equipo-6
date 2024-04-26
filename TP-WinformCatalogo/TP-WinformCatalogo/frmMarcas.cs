@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Dominio;
 using Negocio;
+
+
 namespace TP_WinformCatalogo
 {
     public partial class frmMarcas : Form
@@ -29,6 +31,29 @@ namespace TP_WinformCatalogo
             frmAltaMarcas ventana = new frmAltaMarcas();
             ventana.ShowDialog();
         }
+
+        private void btnEliminarMarcas_Click(object sender, EventArgs e)
+        {
+            MarcasNegocio negocio = new MarcasNegocio();
+            Marca seleccionada;
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Confirme nuevamente si quiere eliminarlo.", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                    negocio.eliminarMarca(seleccionada.ID);
+                    //cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
     }
+    
 }
 

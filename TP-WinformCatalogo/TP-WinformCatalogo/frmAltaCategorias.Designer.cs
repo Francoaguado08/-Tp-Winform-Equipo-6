@@ -96,6 +96,7 @@
             this.MaximumSize = new System.Drawing.Size(427, 455);
             this.MinimumSize = new System.Drawing.Size(427, 455);
             this.Name = "frmAltaCategorias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAltaCategorias";
             this.ResumeLayout(false);
             this.PerformLayout();

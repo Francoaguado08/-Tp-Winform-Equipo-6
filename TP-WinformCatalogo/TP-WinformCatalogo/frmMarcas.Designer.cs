@@ -92,6 +92,7 @@ namespace TP_WinformCatalogo
             this.btnEliminarMarcas.TabIndex = 5;
             this.btnEliminarMarcas.Text = "Eliminar";
             this.btnEliminarMarcas.UseVisualStyleBackColor = true;
+            this.btnEliminarMarcas.Click += new System.EventHandler(this.btnEliminarMarcas_Click);
             // 
             // comboBxMarcas
             // 

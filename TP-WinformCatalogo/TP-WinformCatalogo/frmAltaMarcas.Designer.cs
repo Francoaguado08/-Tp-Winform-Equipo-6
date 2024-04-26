@@ -95,6 +95,7 @@ namespace TP_WinformCatalogo
             this.MaximumSize = new System.Drawing.Size(427, 455);
             this.MinimumSize = new System.Drawing.Size(427, 455);
             this.Name = "frmAltaMarcas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAltaMarcas";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -105,5 +105,26 @@ namespace TP_WinformCatalogo
             cargar();
 
         }
+
+        private void btnEliminarArticulo_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Confirme nuevamente si quiere eliminarlo.", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    negocio.eliminarArticulo(seleccionado.ID);
+                    //cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

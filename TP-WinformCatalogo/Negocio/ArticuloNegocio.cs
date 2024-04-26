@@ -35,13 +35,7 @@ namespace Negocio
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
 
-                    
-
-
-
-
-
-
+                   
 
 
                     if (!Convert.IsDBNull(datos.Lector["ImagenUrl"]))
@@ -121,6 +115,24 @@ namespace Negocio
                 throw ex;
             }
 
+        }
+
+        public void eliminarArticulo(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM Articulos WHERE Id = @Id");
+                datos.setearParametro("@Id", id);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
         }
 
     }
