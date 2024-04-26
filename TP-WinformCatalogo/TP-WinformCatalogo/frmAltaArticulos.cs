@@ -24,8 +24,39 @@ namespace TP_WinformCatalogo
             // se podria poner this.Close() pero no hace falta ya lo reconoce.
             Close();
         }
-        private void btnAceptar_Click(object sender, EventArgs e)
+        
+
+        private void frmAltaArticulos_Load(object sender, EventArgs e)
         {
+            MarcasNegocio marcasNegocio = new MarcasNegocio();  
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+
+            try
+            {
+
+                cboMarca.DataSource = marcasNegocio.listar();
+                cboCategoria.DataSource = categoriaNegocio.listar();    
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+
+
+
+
+        }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+
+
             Articulo arti = new Articulo();
             ArticuloNegocio negocio = new ArticuloNegocio();
 
@@ -35,6 +66,11 @@ namespace TP_WinformCatalogo
                 arti.Nombre = txtNombre.Text;
                 arti.Descripcion = txtDescripcion.Text;
                 arti.Precio = decimal.Parse(txtPrecio.Text);
+               
+                arti.Marca = (Marca)cboMarca.SelectedItem;
+                arti.Categoria = (Categoria)cboCategoria.SelectedItem;
+
+
 
 
                 negocio.agregar(arti);
@@ -49,7 +85,8 @@ namespace TP_WinformCatalogo
                 MessageBox.Show(ex.ToString());
             }
 
-        }
 
+
+        }
     }
 }

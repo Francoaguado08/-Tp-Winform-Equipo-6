@@ -34,7 +34,25 @@ namespace Negocio
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+
+                    
+
+
+
+
+
+
+
+
+                    if (!Convert.IsDBNull(datos.Lector["ImagenUrl"]))
+                    {
+                        aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+                    }
+                    else
+                    {
+                        aux.UrlImagen = "";
+                    }
+
 
                     if (!Convert.IsDBNull(datos.Lector["Marca"]))
                     {
@@ -45,8 +63,7 @@ namespace Negocio
                         aux.Marca.Descripcion = "";
                     }
 
-                    //aux.Categoria = new Categoria();
-                    //aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    
 
                     if (!Convert.IsDBNull(datos.Lector["Categoria"]))
                     {
@@ -76,18 +93,24 @@ namespace Negocio
             
 
         }
-        public void agregar(Dominio.Articulo nuevo)
+        public void agregar(Articulo nuevo)
         {
             AccesoDatos acceso = new AccesoDatos();
 
             try
             {
 
-                acceso.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES (@Codigo, @Nombre, @Descripcion,@Precio)");
+                acceso.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) VALUES (@Codigo, @Nombre, @Descripcion,@Precio, @IdMarca, @IdCategoria)");
                 acceso.setearParametro("@Codigo", nuevo.Codigo);
                 acceso.setearParametro("@Nombre", nuevo.Nombre);
                 acceso.setearParametro("@Descripcion", nuevo.Descripcion);
                 acceso.setearParametro("@Precio", nuevo.Precio);
+               
+                
+                acceso.setearParametro("@IdMarca", nuevo.Marca.ID);
+                acceso.setearParametro("@IdCategoria", nuevo.Categoria.ID);
+
+
                 acceso.ejecutarAccion();
 
 
