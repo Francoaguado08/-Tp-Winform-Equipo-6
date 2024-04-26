@@ -29,18 +29,45 @@ namespace TP_WinformCatalogo
         // Cuando cargo por primera vez va estar asi...
         private void frmArticulos_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+
+
+
+        private void cargar()
+        {
             //Aca invoco la lectura a la BD...
             ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+
             listaArticulo = negocio.listar(); // Asigna los datos obtenidos de la base de datos a listaArticulo
 
             dgvArticulos.DataSource = listaArticulo; // Asigna listaArticulo como origen de datos para el DataGridView
 
+                dgvArticulos.Columns["UrlImagen"].Visible = false;  
+
+
             // Verifica si listaArticulo tiene elementos antes de intentar cargar la imagen del primer artículo
             if (listaArticulo.Count > 0)
             {
-                cargarImagen(listaArticulo[0].UrlImagen); // Cargo la imagen del primer artículo en el PictureBox
+               
+                    
+                    
+                    cargarImagen(listaArticulo[0].UrlImagen); // Cargo la imagen del primer artículo en el PictureBox
+            }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
             }
         }
+
+
+
+
 
 
         // Cuando cambio la seleccion de la grilla, quiero cambiar la imagen correspondiente.
@@ -75,6 +102,8 @@ namespace TP_WinformCatalogo
         {
             frmAltaArticulos alta = new frmAltaArticulos();
             alta.ShowDialog();
+            cargar();
+
         }
     }
 }
