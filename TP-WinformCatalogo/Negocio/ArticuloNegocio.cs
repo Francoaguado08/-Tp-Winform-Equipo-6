@@ -94,15 +94,23 @@ namespace Negocio
             try
             {
 
-                acceso.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) VALUES (@Codigo, @Nombre, @Descripcion,@Precio, @IdMarca, @IdCategoria)");
+                acceso.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria ) VALUES (@Codigo, @Nombre, @Descripcion,@Precio, @IdMarca, @IdCategoria)");
+               
                 acceso.setearParametro("@Codigo", nuevo.Codigo);
                 acceso.setearParametro("@Nombre", nuevo.Nombre);
                 acceso.setearParametro("@Descripcion", nuevo.Descripcion);
+            
                 acceso.setearParametro("@Precio", nuevo.Precio);
-               
-                
+
                 acceso.setearParametro("@IdMarca", nuevo.Marca.ID);
                 acceso.setearParametro("@IdCategoria", nuevo.Categoria.ID);
+                
+
+               
+
+
+               
+
 
 
                 acceso.ejecutarAccion();
@@ -114,8 +122,52 @@ namespace Negocio
 
                 throw ex;
             }
+            finally
+            {
+                // Cerrar la conexión
+                acceso.cerrarConexion();
+            }
 
         }
+
+
+
+        public void agregarImagen(Articulo nuevoArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Articulo articulo = new Articulo();
+            articulo = listar().Last();
+
+            try
+            {
+
+
+                int idArticulo = articulo.ID;
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
+                datos.setearParametro("@IdArticulo", idArticulo);
+                datos.setearParametro("@ImagenUrl", nuevoArticulo.UrlImagen);
+
+                datos.cerrarConexion();
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+
+
+
+
+
+
 
         public void eliminarArticulo(int id)
         {

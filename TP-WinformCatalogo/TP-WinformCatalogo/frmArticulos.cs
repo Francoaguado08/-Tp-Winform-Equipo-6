@@ -118,7 +118,7 @@ namespace TP_WinformCatalogo
                 {
                     seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                     negocio.eliminarArticulo(seleccionado.ID);
-                    //cargar();
+                    cargar();
                 }
             }
             catch (Exception ex)

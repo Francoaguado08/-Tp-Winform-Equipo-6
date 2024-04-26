@@ -65,8 +65,11 @@ namespace TP_WinformCatalogo
                 arti.Codigo = txtCodigo.Text;
                 arti.Nombre = txtNombre.Text;
                 arti.Descripcion = txtDescripcion.Text;
-                arti.Precio = decimal.Parse(txtPrecio.Text);
                
+                arti.UrlImagen = txtUrlImagen.Text; 
+                arti.Precio = decimal.Parse(txtPrecio.Text);
+
+
                 arti.Marca = (Marca)cboMarca.SelectedItem;
                 arti.Categoria = (Categoria)cboCategoria.SelectedItem;
 
@@ -74,6 +77,7 @@ namespace TP_WinformCatalogo
 
 
                 negocio.agregar(arti);
+                negocio.agregarImagen(arti);
                 MessageBox.Show("Articulo agregado correctamente");
                 Close();
 
@@ -88,5 +92,32 @@ namespace TP_WinformCatalogo
 
 
         }
+
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);    
+        }
+
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxAltaArticulo.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pbxAltaArticulo.Load("https://www.came-educativa.com.ar/upsoazej/2022/03/placeholder-2.png");
+            }
+
+
+        }
+
+
+
+
+
+
     }
 }

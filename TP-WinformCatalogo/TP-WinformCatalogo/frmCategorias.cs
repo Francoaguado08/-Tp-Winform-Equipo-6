@@ -14,10 +14,42 @@ namespace TP_WinformCatalogo
 {
     public partial class frmCategorias : Form
     {
+
+
+
+        private List<Categoria> listaCategorias;
         public frmCategorias()
         {
             InitializeComponent();
         }
+
+
+        private void cargar()
+        {
+            //Aca invoco la lectura a la BD...
+            CategoriaNegocio negocio = new CategoriaNegocio();
+
+            try
+            {
+
+                listaCategorias = negocio.listar(); // Asigna los datos obtenidos de la base de datos a listaArticulo
+
+                dgvCategorias.DataSource = listaCategorias; // Asigna listaArticulo como origen de datos para el DataGridView
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
 
         private void frmCategorias_Load(object sender, EventArgs e)
         {
@@ -43,7 +75,7 @@ namespace TP_WinformCatalogo
                 {
                     seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
                     negocio.eliminarCategoria(seleccionada.ID);
-                    //cargar();
+                    cargar();
                 }
             }
             catch (Exception ex)
