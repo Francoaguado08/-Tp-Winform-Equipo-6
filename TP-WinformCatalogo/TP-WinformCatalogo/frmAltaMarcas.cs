@@ -31,7 +31,7 @@ namespace TP_WinformCatalogo
 
             try
             {
-                arti.Nombre = txtDescripcion.Text;
+                arti.Descripcion = txtDescripcion.Text;
 
                 negocio.agregarMarcas(arti);
                 MessageBox.Show("Articulo agregado correctamente");

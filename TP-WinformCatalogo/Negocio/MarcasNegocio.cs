@@ -26,7 +26,7 @@ namespace Negocio
                 {
                     Marca aux = new Marca();
                     aux.ID = (int)datos.Lector["Id"];
-                    aux.Nombre = (string)datos.Lector["Descripcion"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
 
                     lista.Add(aux);
                 }
@@ -52,7 +52,7 @@ namespace Negocio
             try
             {
                 datos.setearConsulta("insert into Marcas (Descripcion) VALUES (@Descripcion)");
-                datos.setearParametro("@Descripcion", nueva.Nombre);
+                datos.setearParametro("@Descripcion", nueva.Descripcion);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -90,7 +90,7 @@ namespace Negocio
             {
                 datos.setearConsulta("UPDATE MARCAS SET Descripcion = @Descripcion WHERE Id = @Id");
                 datos.setearParametro("@Id", marcaMod.ID);
-                datos.setearParametro("@Descripcion", marcaMod.Nombre);
+                datos.setearParametro("@Descripcion", marcaMod.Descripcion);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

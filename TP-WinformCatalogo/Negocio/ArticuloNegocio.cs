@@ -22,7 +22,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, I.ImagenUrl FROM ARTICULOS A JOIN IMAGENES I ON A.Id = I.Id");
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion AS Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id LEFT JOIN IMAGENES I ON A.Id = I.IdArticulo");
                 datos.ejecutarLectura();
 
                 //Ahora voy leyendo, si pudo leer ingresa al while y me posiciona el puntero en la siguiente posicion.
@@ -33,10 +33,29 @@ namespace Negocio
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    //aux.Marca = (Marca)datos.Lector["IdMarca"];
-                    //aux.Categoria = (Categoria)datos.Lector["IdCategoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];    
+                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+
+                    if (!Convert.IsDBNull(datos.Lector["Marca"]))
+                    {
+                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    }
+                    else
+                    {
+                        aux.Marca.Descripcion = "";
+                    }
+
+                    //aux.Categoria = new Categoria();
+                    //aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+
+                    if (!Convert.IsDBNull(datos.Lector["Categoria"]))
+                    {
+                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    }
+                    else
+                    {
+                        aux.Categoria.Descripcion = "";
+                    }
 
                     lista.Add(aux); //(7)- Finalmente agrego ese articulo a la lisa.
                 }
