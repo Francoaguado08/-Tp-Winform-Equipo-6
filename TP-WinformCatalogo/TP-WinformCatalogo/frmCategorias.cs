@@ -23,5 +23,11 @@ namespace TP_WinformCatalogo
             CategoriaNegocio negocio = new CategoriaNegocio();
             dgvCategorias.DataSource = negocio.listar();
         }
+
+        private void btnAgregarCategorias_Click(object sender, EventArgs e)
+        {
+            frmAltaCategorias ventana = new frmAltaCategorias();
+            ventana.ShowDialog();
+        }
     }
 }

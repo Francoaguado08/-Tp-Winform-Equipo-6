@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dominio;
-using Negocio;
 
 namespace TP_WinformCatalogo
 {
-    public partial class frmAltaMarcas : Form
+    public partial class frmAltaCategorias : Form
     {
-        public frmAltaMarcas()
+        public frmAltaCategorias()
         {
             InitializeComponent();
         }
@@ -26,14 +26,14 @@ namespace TP_WinformCatalogo
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Marca arti = new Marca();
-            MarcasNegocio negocio = new MarcasNegocio();
+            Categoria arti = new Categoria();
+            CategoriaNegocio negocio = new CategoriaNegocio();
 
             try
             {
-                arti.Nombre = txtDescripcion.Text;
+                arti.Descripcion = txtDescripcion.Text;
 
-                negocio.agregarMarcas(arti);
+                negocio.agregarCategoria(arti);
                 MessageBox.Show("Articulo agregado correctamente");
                 Close();
 

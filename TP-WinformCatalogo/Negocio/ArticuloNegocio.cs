@@ -64,8 +64,13 @@ namespace Negocio
             try
             {
 
-                acceso.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES ('" + nuevo.Codigo + "','" + nuevo.Nombre + "','" + nuevo.Descripcion + "','" + nuevo.Precio + "'");
+                acceso.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES (@Codigo, @Nombre, @Descripcion,@Precio)");
+                acceso.setearParametro("@Codigo", nuevo.Codigo);
+                acceso.setearParametro("@Nombre", nuevo.Nombre);
+                acceso.setearParametro("@Descripcion", nuevo.Descripcion);
+                acceso.setearParametro("@Precio", nuevo.Precio);
                 acceso.ejecutarAccion();
+
 
             }
             catch (Exception ex)

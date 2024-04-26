@@ -51,7 +51,8 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into MARCAS VALUES ('" + nueva.ID + "','" + nueva.Nombre + "')");
+                datos.setearConsulta("insert into Marcas (Descripcion) VALUES (@Descripcion)");
+                datos.setearParametro("@Descripcion", nueva.Nombre);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -62,6 +63,7 @@ namespace Negocio
             finally { datos.cerrarConexion(); }
 
         }
+
         public void eliminarMarca(int id)
         {
             AccesoDatos datos = new AccesoDatos();
