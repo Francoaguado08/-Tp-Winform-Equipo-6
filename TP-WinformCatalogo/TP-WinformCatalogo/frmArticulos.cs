@@ -46,7 +46,7 @@ namespace TP_WinformCatalogo
 
             dgvArticulos.DataSource = listaArticulo; // Asigna listaArticulo como origen de datos para el DataGridView
 
-                dgvArticulos.Columns["UrlImagen"].Visible = false;  
+                ocultarColumnas(); 
 
 
             // Verifica si listaArticulo tiene elementos antes de intentar cargar la imagen del primer artículo
@@ -73,10 +73,13 @@ namespace TP_WinformCatalogo
         // Cuando cambio la seleccion de la grilla, quiero cambiar la imagen correspondiente.
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            //current row (la fila actual) // dataBoundItem (dame el objeto enlazado).
-            Articulo seleccionado = (Articulo) dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.UrlImagen);
 
+            if (dgvArticulos.CurrentRow != null)
+            {
+                //current row (la fila actual) // dataBoundItem (dame el objeto enlazado).
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.UrlImagen);
+            }
 
         }
 
@@ -125,6 +128,57 @@ namespace TP_WinformCatalogo
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+
+        //FILTRO RAPIDO CON BTN.
+        /*
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text;
+
+            if (filtro != "")
+            {
+                listaFiltrada = listaArticulo.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaArticulo;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
+
+        }
+        */
+
+
+        private void ocultarColumnas()
+        {
+            dgvArticulos.Columns["UrlImagen"].Visible = false;
+            dgvArticulos.Columns["Id"].Visible = false;
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text;
+
+            if (filtro.Length >=3)
+            {
+                listaFiltrada = listaArticulo.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaArticulo;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
+
         }
     }
 }

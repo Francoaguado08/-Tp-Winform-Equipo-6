@@ -33,12 +33,9 @@ namespace TP_WinformCatalogo
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
             this.btnModificarArticulo = new System.Windows.Forms.Button();
             this.btnEliminarArticulo = new System.Windows.Forms.Button();
-            this.cbListarArticulos = new System.Windows.Forms.CheckBox();
-            this.cbVerDetalleArticulo = new System.Windows.Forms.CheckBox();
-            this.cbBuscarArticulo = new System.Windows.Forms.CheckBox();
-            this.comboBxArticulos = new System.Windows.Forms.ComboBox();
-            this.lblArticulosDisponibles = new System.Windows.Forms.Label();
+            this.lblFiltro = new System.Windows.Forms.Label();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +43,7 @@ namespace TP_WinformCatalogo
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(12, 101);
+            this.dgvArticulos.Location = new System.Drawing.Point(11, 97);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.Size = new System.Drawing.Size(547, 244);
@@ -85,54 +82,15 @@ namespace TP_WinformCatalogo
             this.btnEliminarArticulo.UseVisualStyleBackColor = true;
             this.btnEliminarArticulo.Click += new System.EventHandler(this.btnEliminarArticulo_Click);
             // 
-            // cbListarArticulos
+            // lblFiltro
             // 
-            this.cbListarArticulos.AutoSize = true;
-            this.cbListarArticulos.Location = new System.Drawing.Point(404, 67);
-            this.cbListarArticulos.Name = "cbListarArticulos";
-            this.cbListarArticulos.Size = new System.Drawing.Size(138, 17);
-            this.cbListarArticulos.TabIndex = 15;
-            this.cbListarArticulos.Text = "Listar todos los articulos";
-            this.cbListarArticulos.UseVisualStyleBackColor = true;
-            // 
-            // cbVerDetalleArticulo
-            // 
-            this.cbVerDetalleArticulo.AutoSize = true;
-            this.cbVerDetalleArticulo.Location = new System.Drawing.Point(404, 44);
-            this.cbVerDetalleArticulo.Name = "cbVerDetalleArticulo";
-            this.cbVerDetalleArticulo.Size = new System.Drawing.Size(194, 17);
-            this.cbVerDetalleArticulo.TabIndex = 14;
-            this.cbVerDetalleArticulo.Text = "Ver detalle de articulo seleccionado";
-            this.cbVerDetalleArticulo.UseVisualStyleBackColor = true;
-            // 
-            // cbBuscarArticulo
-            // 
-            this.cbBuscarArticulo.AutoSize = true;
-            this.cbBuscarArticulo.Location = new System.Drawing.Point(404, 20);
-            this.cbBuscarArticulo.Name = "cbBuscarArticulo";
-            this.cbBuscarArticulo.Size = new System.Drawing.Size(162, 17);
-            this.cbBuscarArticulo.TabIndex = 13;
-            this.cbBuscarArticulo.Text = "Buscar articulo seleccionado";
-            this.cbBuscarArticulo.UseVisualStyleBackColor = true;
-            // 
-            // comboBxArticulos
-            // 
-            this.comboBxArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBxArticulos.FormattingEnabled = true;
-            this.comboBxArticulos.Location = new System.Drawing.Point(277, 60);
-            this.comboBxArticulos.Name = "comboBxArticulos";
-            this.comboBxArticulos.Size = new System.Drawing.Size(121, 21);
-            this.comboBxArticulos.TabIndex = 12;
-            // 
-            // lblArticulosDisponibles
-            // 
-            this.lblArticulosDisponibles.AutoSize = true;
-            this.lblArticulosDisponibles.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArticulosDisponibles.Location = new System.Drawing.Point(12, 60);
-            this.lblArticulosDisponibles.Name = "lblArticulosDisponibles";
-            this.lblArticulosDisponibles.Size = new System.Drawing.Size(265, 25);
-            this.lblArticulosDisponibles.TabIndex = 11;
-            this.lblArticulosDisponibles.Text = "Articulos Disponibles:";
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.Location = new System.Drawing.Point(12, 60);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(109, 25);
+            this.lblFiltro.TabIndex = 11;
+            this.lblFiltro.Text = "Buscar : ";
             // 
             // pbxArticulo
             // 
@@ -143,17 +101,22 @@ namespace TP_WinformCatalogo
             this.pbxArticulo.TabIndex = 16;
             this.pbxArticulo.TabStop = false;
             // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(116, 64);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(200, 20);
+            this.txtFiltro.TabIndex = 17;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 448);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.pbxArticulo);
-            this.Controls.Add(this.cbListarArticulos);
-            this.Controls.Add(this.cbVerDetalleArticulo);
-            this.Controls.Add(this.cbBuscarArticulo);
-            this.Controls.Add(this.comboBxArticulos);
-            this.Controls.Add(this.lblArticulosDisponibles);
+            this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.btnEliminarArticulo);
             this.Controls.Add(this.btnModificarArticulo);
             this.Controls.Add(this.btnAgregarArticulo);
@@ -175,11 +138,8 @@ namespace TP_WinformCatalogo
         private System.Windows.Forms.Button btnAgregarArticulo;
         private System.Windows.Forms.Button btnModificarArticulo;
         private System.Windows.Forms.Button btnEliminarArticulo;
-        private System.Windows.Forms.CheckBox cbListarArticulos;
-        private System.Windows.Forms.CheckBox cbVerDetalleArticulo;
-        private System.Windows.Forms.CheckBox cbBuscarArticulo;
-        private System.Windows.Forms.ComboBox comboBxArticulos;
-        private System.Windows.Forms.Label lblArticulosDisponibles;
+        private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.PictureBox pbxArticulo;
+        private System.Windows.Forms.TextBox txtFiltro;
     }
 }
