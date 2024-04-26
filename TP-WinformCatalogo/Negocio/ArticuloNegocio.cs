@@ -14,14 +14,19 @@ namespace Negocio
     ///(2) Los metodos tienen que ser Public para yo poder accederlos desde el exterior.
     public class ArticuloNegocio
     {
-        public List <Articulo> listar() //Metodo que devuelve una lista.
+          
+        
+        
+        
+        
+          public List <Articulo> listar() //Metodo que devuelve una lista.
         {
             List<Articulo> lista = new List<Articulo>(); //(1)Creo mi lista.
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("Select Id, Codigo, Nombre, Descripcion, Precio From ARTICULOS");
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, I.ImagenUrl FROM ARTICULOS A JOIN IMAGENES I ON A.Id = I.Id");
                 datos.ejecutarLectura();
 
                 //Ahora voy leyendo, si pudo leer ingresa al while y me posiciona el puntero en la siguiente posicion.
@@ -32,10 +37,10 @@ namespace Negocio
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    //aux.Marca = (Marca)datos.Lector["IdMarca"];
-                    //aux.Categoria = (Categoria)datos.Lector["IdCategoria"];
+                   // aux.Marca = (int)datos.Lector["IdMarca"];
+                   // aux.Categoria = (int)datos.Lector["IdCategoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-
+                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
 
                     lista.Add(aux); //(7)- Finalmente agrego ese articulo a la lisa.
                 }
@@ -56,6 +61,39 @@ namespace Negocio
 
         }
     
+
+           //Funcion Agregar Articulo.
+          public void agregar(Articulo nuevo)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO Articulo (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio)");
+                datos.ejecutarLectura();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { datos.cerrarConexion();}
+
+
+        }
+
+
+
+
+
+
+
+
     }
 
 }

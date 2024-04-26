@@ -38,37 +38,38 @@ namespace TP_WinformCatalogo
             this.cbBuscarArticulo = new System.Windows.Forms.CheckBox();
             this.comboBxArticulos = new System.Windows.Forms.ComboBox();
             this.lblArticulosDisponibles = new System.Windows.Forms.Label();
+            this.pbArticulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(16, 124);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvArticulos.Location = new System.Drawing.Point(12, 101);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
-            this.dgvArticulos.Size = new System.Drawing.Size(729, 300);
+            this.dgvArticulos.Size = new System.Drawing.Size(547, 244);
             this.dgvArticulos.TabIndex = 1;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged_1);
             // 
             // btnAgregarArticulo
             // 
             this.btnAgregarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(16, 452);
-            this.btnAgregarArticulo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(12, 367);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
-            this.btnAgregarArticulo.Size = new System.Drawing.Size(148, 46);
+            this.btnAgregarArticulo.Size = new System.Drawing.Size(111, 37);
             this.btnAgregarArticulo.TabIndex = 2;
             this.btnAgregarArticulo.Text = "Agregar";
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
+            this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
             // 
             // btnModificarArticulo
             // 
             this.btnModificarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificarArticulo.Location = new System.Drawing.Point(197, 452);
-            this.btnModificarArticulo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificarArticulo.Location = new System.Drawing.Point(148, 367);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
-            this.btnModificarArticulo.Size = new System.Drawing.Size(148, 46);
+            this.btnModificarArticulo.Size = new System.Drawing.Size(111, 37);
             this.btnModificarArticulo.TabIndex = 3;
             this.btnModificarArticulo.Text = "Modificar";
             this.btnModificarArticulo.UseVisualStyleBackColor = true;
@@ -76,10 +77,9 @@ namespace TP_WinformCatalogo
             // btnEliminarArticulo
             // 
             this.btnEliminarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarArticulo.Location = new System.Drawing.Point(381, 452);
-            this.btnEliminarArticulo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(286, 367);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
-            this.btnEliminarArticulo.Size = new System.Drawing.Size(148, 46);
+            this.btnEliminarArticulo.Size = new System.Drawing.Size(111, 37);
             this.btnEliminarArticulo.TabIndex = 4;
             this.btnEliminarArticulo.Text = "Eliminar";
             this.btnEliminarArticulo.UseVisualStyleBackColor = true;
@@ -87,10 +87,9 @@ namespace TP_WinformCatalogo
             // cbListarArticulos
             // 
             this.cbListarArticulos.AutoSize = true;
-            this.cbListarArticulos.Location = new System.Drawing.Point(539, 82);
-            this.cbListarArticulos.Margin = new System.Windows.Forms.Padding(4);
+            this.cbListarArticulos.Location = new System.Drawing.Point(404, 67);
             this.cbListarArticulos.Name = "cbListarArticulos";
-            this.cbListarArticulos.Size = new System.Drawing.Size(183, 21);
+            this.cbListarArticulos.Size = new System.Drawing.Size(138, 17);
             this.cbListarArticulos.TabIndex = 15;
             this.cbListarArticulos.Text = "Listar todos los articulos";
             this.cbListarArticulos.UseVisualStyleBackColor = true;
@@ -98,10 +97,9 @@ namespace TP_WinformCatalogo
             // cbVerDetalleArticulo
             // 
             this.cbVerDetalleArticulo.AutoSize = true;
-            this.cbVerDetalleArticulo.Location = new System.Drawing.Point(539, 54);
-            this.cbVerDetalleArticulo.Margin = new System.Windows.Forms.Padding(4);
+            this.cbVerDetalleArticulo.Location = new System.Drawing.Point(404, 44);
             this.cbVerDetalleArticulo.Name = "cbVerDetalleArticulo";
-            this.cbVerDetalleArticulo.Size = new System.Drawing.Size(255, 21);
+            this.cbVerDetalleArticulo.Size = new System.Drawing.Size(194, 17);
             this.cbVerDetalleArticulo.TabIndex = 14;
             this.cbVerDetalleArticulo.Text = "Ver detalle de articulo seleccionado";
             this.cbVerDetalleArticulo.UseVisualStyleBackColor = true;
@@ -109,10 +107,9 @@ namespace TP_WinformCatalogo
             // cbBuscarArticulo
             // 
             this.cbBuscarArticulo.AutoSize = true;
-            this.cbBuscarArticulo.Location = new System.Drawing.Point(539, 25);
-            this.cbBuscarArticulo.Margin = new System.Windows.Forms.Padding(4);
+            this.cbBuscarArticulo.Location = new System.Drawing.Point(404, 20);
             this.cbBuscarArticulo.Name = "cbBuscarArticulo";
-            this.cbBuscarArticulo.Size = new System.Drawing.Size(211, 21);
+            this.cbBuscarArticulo.Size = new System.Drawing.Size(162, 17);
             this.cbBuscarArticulo.TabIndex = 13;
             this.cbBuscarArticulo.Text = "Buscar articulo seleccionado";
             this.cbBuscarArticulo.UseVisualStyleBackColor = true;
@@ -121,28 +118,36 @@ namespace TP_WinformCatalogo
             // 
             this.comboBxArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBxArticulos.FormattingEnabled = true;
-            this.comboBxArticulos.Location = new System.Drawing.Point(369, 74);
-            this.comboBxArticulos.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBxArticulos.Location = new System.Drawing.Point(277, 60);
             this.comboBxArticulos.Name = "comboBxArticulos";
-            this.comboBxArticulos.Size = new System.Drawing.Size(160, 24);
+            this.comboBxArticulos.Size = new System.Drawing.Size(121, 21);
             this.comboBxArticulos.TabIndex = 12;
             // 
             // lblArticulosDisponibles
             // 
             this.lblArticulosDisponibles.AutoSize = true;
             this.lblArticulosDisponibles.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArticulosDisponibles.Location = new System.Drawing.Point(16, 74);
-            this.lblArticulosDisponibles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblArticulosDisponibles.Location = new System.Drawing.Point(12, 60);
             this.lblArticulosDisponibles.Name = "lblArticulosDisponibles";
-            this.lblArticulosDisponibles.Size = new System.Drawing.Size(344, 32);
+            this.lblArticulosDisponibles.Size = new System.Drawing.Size(265, 25);
             this.lblArticulosDisponibles.TabIndex = 11;
             this.lblArticulosDisponibles.Text = "Articulos Disponibles:";
             // 
+            // pbArticulo
+            // 
+            this.pbArticulo.Location = new System.Drawing.Point(565, 101);
+            this.pbArticulo.Name = "pbArticulo";
+            this.pbArticulo.Size = new System.Drawing.Size(233, 244);
+            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbArticulo.TabIndex = 16;
+            this.pbArticulo.TabStop = false;
+            // 
             // frmArticulos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 544);
+            this.ClientSize = new System.Drawing.Size(800, 448);
+            this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.cbListarArticulos);
             this.Controls.Add(this.cbVerDetalleArticulo);
             this.Controls.Add(this.cbBuscarArticulo);
@@ -152,13 +157,13 @@ namespace TP_WinformCatalogo
             this.Controls.Add(this.btnModificarArticulo);
             this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.dgvArticulos);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1082, 591);
-            this.MinimumSize = new System.Drawing.Size(1082, 591);
+            this.MaximumSize = new System.Drawing.Size(816, 487);
+            this.MinimumSize = new System.Drawing.Size(816, 487);
             this.Name = "frmArticulos";
             this.Text = "Articulos";
             this.Load += new System.EventHandler(this.frmArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +179,6 @@ namespace TP_WinformCatalogo
         private System.Windows.Forms.CheckBox cbBuscarArticulo;
         private System.Windows.Forms.ComboBox comboBxArticulos;
         private System.Windows.Forms.Label lblArticulosDisponibles;
+        private System.Windows.Forms.PictureBox pbArticulo;
     }
 }
