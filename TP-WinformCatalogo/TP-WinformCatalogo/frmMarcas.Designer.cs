@@ -107,6 +107,7 @@ namespace TP_WinformCatalogo
             this.txtFiltroMarca.Size = new System.Drawing.Size(211, 20);
             this.txtFiltroMarca.TabIndex = 11;
             this.txtFiltroMarca.TextChanged += new System.EventHandler(this.txtFiltroMarca_TextChanged);
+            this.txtFiltroMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltroMarca_KeyPress);
             // 
             // frmMarcas
             // 

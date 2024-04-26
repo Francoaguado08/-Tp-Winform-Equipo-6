@@ -23,6 +23,7 @@ namespace TP_WinformCatalogo
         public frmCategorias()
         {
             InitializeComponent();
+            txtFiltroCategoria.KeyPress += txtFiltroCategoria_KeyPress;
         }
 
 
@@ -117,6 +118,16 @@ namespace TP_WinformCatalogo
             dgvCategorias.DataSource = null;
             dgvCategorias.DataSource = listaFiltrada;
 
+        }
+
+        private void txtFiltroCategoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter presionado es un dígito numérico
+            if (char.IsDigit(e.KeyChar))
+            {
+                // Si es un dígito numérico, cancelar el evento KeyPress para evitar que se escriba en el TextBox
+                e.Handled = true;
+            }
         }
     }
 }

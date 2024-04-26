@@ -24,7 +24,8 @@ namespace TP_WinformCatalogo
         public frmArticulos()
         {
             InitializeComponent();
-            
+            //txtFiltroArticulos.KeyPress += txtFiltroArticulos_KeyPress;
+            // si es que quiero que en mi filtro no se permita teclear numeros...
         }
         // Cuando cargo por primera vez va estar asi...
         private void frmArticulos_Load(object sender, EventArgs e)
@@ -180,5 +181,15 @@ namespace TP_WinformCatalogo
             ocultarColumnas();
 
         }
+
+        //Validar que en mi filtro no pueda escribir numero.
+       /* private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                // Si es un dígito numérico, cancelar el evento KeyPress para evitar que se escriba en el TextBox
+                e.Handled = true;
+            }
+        }*/
     }
 }

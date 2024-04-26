@@ -23,7 +23,8 @@ namespace TP_WinformCatalogo
         public frmMarcas()
         {
             InitializeComponent();
-           
+            txtFiltroMarca.KeyPress += txtFiltroMarca_KeyPress;
+
         }
 
 
@@ -115,6 +116,16 @@ namespace TP_WinformCatalogo
                 //current row (la fila actual) // dataBoundItem (dame el objeto enlazado).
                 Marca seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
                 
+            }
+        }
+
+        private void txtFiltroMarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter presionado es un dígito numérico
+            if (char.IsDigit(e.KeyChar))
+            {
+                // Si es un dígito numérico, cancelar el evento KeyPress para evitar que se escriba en el TextBox
+                e.Handled = true;
             }
         }
     }

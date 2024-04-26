@@ -97,6 +97,7 @@ namespace TP_WinformCatalogo
             this.txtFiltroCategoria.Size = new System.Drawing.Size(176, 20);
             this.txtFiltroCategoria.TabIndex = 26;
             this.txtFiltroCategoria.TextChanged += new System.EventHandler(this.txtFiltroCategoria_TextChanged);
+            this.txtFiltroCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltroCategoria_KeyPress);
             // 
             // frmCategorias
             // 
