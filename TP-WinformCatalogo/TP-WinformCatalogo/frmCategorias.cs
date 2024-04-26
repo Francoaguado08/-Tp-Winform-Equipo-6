@@ -18,6 +18,8 @@ namespace TP_WinformCatalogo
 
 
         private List<Categoria> listaCategorias;
+
+
         public frmCategorias()
         {
             InitializeComponent();
@@ -53,14 +55,14 @@ namespace TP_WinformCatalogo
 
         private void frmCategorias_Load(object sender, EventArgs e)
         {
-            CategoriaNegocio negocio = new CategoriaNegocio();
-            dgvCategorias.DataSource = negocio.listar();
+            cargar();
         }
 
         private void btnAgregarCategorias_Click(object sender, EventArgs e)
         {
             frmAltaCategorias ventana = new frmAltaCategorias();
             ventana.ShowDialog();
+            cargar();
         }
 
         private void btnEliminarCategorias_Click(object sender, EventArgs e)
@@ -82,6 +84,38 @@ namespace TP_WinformCatalogo
             {
                 MessageBox.Show(ex.ToString());
             }
+
+        }
+
+      
+        
+        
+        private void dgvCategorias_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvCategorias.CurrentRow != null)
+            {
+                //current row (la fila actual) // dataBoundItem (dame el objeto enlazado).
+                Categoria seleccionado = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+
+            }
+        }
+
+        private void txtFiltroCategoria_TextChanged(object sender, EventArgs e)
+        {
+            List<Categoria> listaFiltrada;
+            string filtro = txtFiltroCategoria.Text;
+
+            if (filtro.Length >= 3)
+            {
+                listaFiltrada = listaCategorias.FindAll(x => x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaCategorias;
+            }
+
+            dgvCategorias.DataSource = null;
+            dgvCategorias.DataSource = listaFiltrada;
 
         }
     }

@@ -23,6 +23,7 @@ namespace TP_WinformCatalogo
         public frmMarcas()
         {
             InitializeComponent();
+           
         }
 
 
@@ -55,14 +56,15 @@ namespace TP_WinformCatalogo
 
         private void frmMarcas_Load(object sender, EventArgs e)
         {
-            MarcasNegocio negocio = new MarcasNegocio();
-            dgvMarcas.DataSource = negocio.listar();
+            cargar();
+            
         }
 
         private void btnAgregarMarcas_Click(object sender, EventArgs e)
         {
             frmAltaMarcas ventana = new frmAltaMarcas();
             ventana.ShowDialog();
+            cargar();
         }
 
         private void btnEliminarMarcas_Click(object sender, EventArgs e)
@@ -85,6 +87,35 @@ namespace TP_WinformCatalogo
                 MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void txtFiltroMarca_TextChanged(object sender, EventArgs e)
+        {
+            List<Marca> listaFiltrada;
+            string filtro = txtFiltroMarca.Text;
+
+            if (filtro.Length >= 3)
+            {
+                listaFiltrada = listaMarca.FindAll(x => x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaMarca;
+            }
+
+            dgvMarcas.DataSource = null;
+            dgvMarcas.DataSource = listaFiltrada;
+            
+        }
+
+        private void dgvMarcas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvMarcas.CurrentRow != null)
+            {
+                //current row (la fila actual) // dataBoundItem (dame el objeto enlazado).
+                Marca seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                
+            }
         }
     }
     

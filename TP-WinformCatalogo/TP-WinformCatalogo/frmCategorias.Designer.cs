@@ -29,66 +29,14 @@ namespace TP_WinformCatalogo
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbListarCategorias = new System.Windows.Forms.CheckBox();
-            this.cbVerDetalleCategorias = new System.Windows.Forms.CheckBox();
-            this.cbBuscarCategoria = new System.Windows.Forms.CheckBox();
-            this.cmbxMarcas = new System.Windows.Forms.ComboBox();
-            this.lblCategoriasDisponibles = new System.Windows.Forms.Label();
             this.btnEliminarCategorias = new System.Windows.Forms.Button();
             this.btnModificarCategorias = new System.Windows.Forms.Button();
             this.btnAgregarCategorias = new System.Windows.Forms.Button();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.txtFiltroCategoria = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cbListarCategorias
-            // 
-            this.cbListarCategorias.AutoSize = true;
-            this.cbListarCategorias.Location = new System.Drawing.Point(416, 67);
-            this.cbListarCategorias.Name = "cbListarCategorias";
-            this.cbListarCategorias.Size = new System.Drawing.Size(148, 17);
-            this.cbListarCategorias.TabIndex = 24;
-            this.cbListarCategorias.Text = "Listar todos las categorias";
-            this.cbListarCategorias.UseVisualStyleBackColor = true;
-            // 
-            // cbVerDetalleCategorias
-            // 
-            this.cbVerDetalleCategorias.AutoSize = true;
-            this.cbVerDetalleCategorias.Location = new System.Drawing.Point(416, 44);
-            this.cbVerDetalleCategorias.Name = "cbVerDetalleCategorias";
-            this.cbVerDetalleCategorias.Size = new System.Drawing.Size(204, 17);
-            this.cbVerDetalleCategorias.TabIndex = 23;
-            this.cbVerDetalleCategorias.Text = "Ver detalle de categoria seleccionada";
-            this.cbVerDetalleCategorias.UseVisualStyleBackColor = true;
-            // 
-            // cbBuscarCategoria
-            // 
-            this.cbBuscarCategoria.AutoSize = true;
-            this.cbBuscarCategoria.Location = new System.Drawing.Point(416, 20);
-            this.cbBuscarCategoria.Name = "cbBuscarCategoria";
-            this.cbBuscarCategoria.Size = new System.Drawing.Size(172, 17);
-            this.cbBuscarCategoria.TabIndex = 22;
-            this.cbBuscarCategoria.Text = "Buscar categoria seleccionado";
-            this.cbBuscarCategoria.UseVisualStyleBackColor = true;
-            // 
-            // cmbxMarcas
-            // 
-            this.cmbxMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbxMarcas.FormattingEnabled = true;
-            this.cmbxMarcas.Location = new System.Drawing.Point(289, 60);
-            this.cmbxMarcas.Name = "cmbxMarcas";
-            this.cmbxMarcas.Size = new System.Drawing.Size(121, 21);
-            this.cmbxMarcas.TabIndex = 21;
-            // 
-            // lblCategoriasDisponibles
-            // 
-            this.lblCategoriasDisponibles.AutoSize = true;
-            this.lblCategoriasDisponibles.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriasDisponibles.Location = new System.Drawing.Point(12, 60);
-            this.lblCategoriasDisponibles.Name = "lblCategoriasDisponibles";
-            this.lblCategoriasDisponibles.Size = new System.Drawing.Size(278, 25);
-            this.lblCategoriasDisponibles.TabIndex = 20;
-            this.lblCategoriasDisponibles.Text = "Categorias Disponibles:";
             // 
             // btnEliminarCategorias
             // 
@@ -130,17 +78,33 @@ namespace TP_WinformCatalogo
             this.dgvCategorias.RowHeadersWidth = 51;
             this.dgvCategorias.Size = new System.Drawing.Size(547, 244);
             this.dgvCategorias.TabIndex = 16;
+            this.dgvCategorias.SelectionChanged += new System.EventHandler(this.dgvCategorias_SelectionChanged);
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(8, 60);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(206, 24);
+            this.lblCategoria.TabIndex = 25;
+            this.lblCategoria.Text = "Buscar Categoria :";
+            // 
+            // txtFiltroCategoria
+            // 
+            this.txtFiltroCategoria.Location = new System.Drawing.Point(220, 66);
+            this.txtFiltroCategoria.Name = "txtFiltroCategoria";
+            this.txtFiltroCategoria.Size = new System.Drawing.Size(176, 20);
+            this.txtFiltroCategoria.TabIndex = 26;
+            this.txtFiltroCategoria.TextChanged += new System.EventHandler(this.txtFiltroCategoria_TextChanged);
             // 
             // frmCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 448);
-            this.Controls.Add(this.cbListarCategorias);
-            this.Controls.Add(this.cbVerDetalleCategorias);
-            this.Controls.Add(this.cbBuscarCategoria);
-            this.Controls.Add(this.cmbxMarcas);
-            this.Controls.Add(this.lblCategoriasDisponibles);
+            this.Controls.Add(this.txtFiltroCategoria);
+            this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.btnEliminarCategorias);
             this.Controls.Add(this.btnModificarCategorias);
             this.Controls.Add(this.btnAgregarCategorias);
@@ -157,15 +121,11 @@ namespace TP_WinformCatalogo
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox cbListarCategorias;
-        private System.Windows.Forms.CheckBox cbVerDetalleCategorias;
-        private System.Windows.Forms.CheckBox cbBuscarCategoria;
-        private System.Windows.Forms.ComboBox cmbxMarcas;
-        private System.Windows.Forms.Label lblCategoriasDisponibles;
         private System.Windows.Forms.Button btnEliminarCategorias;
         private System.Windows.Forms.Button btnModificarCategorias;
         private System.Windows.Forms.Button btnAgregarCategorias;
         private System.Windows.Forms.DataGridView dgvCategorias;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.TextBox txtFiltroCategoria;
     }
 }
