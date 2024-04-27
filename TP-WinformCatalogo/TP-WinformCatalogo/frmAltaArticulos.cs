@@ -116,8 +116,33 @@ namespace TP_WinformCatalogo
 
 
 
+        //FRONT
+        private void btnAceptar_MouseEnter(object sender, EventArgs e)
+        {
+            btnAceptar.FlatAppearance.BorderColor = Color.Green;
+        }
+
+      
+
+        private void btnAceptar_MouseLeave_1(object sender, EventArgs e)
+        {
+            btnAceptar.FlatAppearance.BorderColor = SystemColors.ControlDark;
+        }
 
 
 
+
+
+
+
+        private void btnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCancelar.FlatAppearance.BorderColor = SystemColors.ControlDark;
+        }
+
+        private void btnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCancelar.FlatAppearance.BorderColor = Color.Red;
+        }
     }
 }
