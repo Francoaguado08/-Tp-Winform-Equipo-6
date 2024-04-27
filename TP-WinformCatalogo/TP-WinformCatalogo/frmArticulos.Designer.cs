@@ -45,6 +45,7 @@ namespace TP_WinformCatalogo
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.Location = new System.Drawing.Point(12, 97);
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.Size = new System.Drawing.Size(547, 244);
             this.dgvArticulos.TabIndex = 1;
@@ -108,7 +109,6 @@ namespace TP_WinformCatalogo
             this.txtFiltro.Size = new System.Drawing.Size(200, 20);
             this.txtFiltro.TabIndex = 17;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
-            
             // 
             // frmArticulos
             // 
