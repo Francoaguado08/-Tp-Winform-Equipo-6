@@ -7,7 +7,6 @@ using System.Data.SqlClient;
 using Dominio;
 
 namespace Negocio
-
 {
     public class CategoriaNegocio
     {
@@ -33,7 +32,6 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
@@ -52,12 +50,11 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally { datos.cerrarConexion(); }
-
         }
+
         public void eliminarCategoria(int id)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -70,7 +67,24 @@ namespace Negocio
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+        }
 
+        public void modificarCategoria(Categoria categoriaMod)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE Categorias SET Descripcion = @Descripcion WHERE Id = @Id");
+                datos.setearParametro("@Id", categoriaMod.ID);
+                datos.setearParametro("@Descripcion", categoriaMod.Descripcion);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally { datos.cerrarConexion(); }

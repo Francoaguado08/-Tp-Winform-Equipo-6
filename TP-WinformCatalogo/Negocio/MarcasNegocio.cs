@@ -8,7 +8,6 @@ using Dominio;
 
 
 namespace Negocio
-
 {
     public class MarcasNegocio
     {
@@ -30,22 +29,18 @@ namespace Negocio
 
                     lista.Add(aux);
                 }
-
                 return lista;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
             {
                 datos.cerrarConexion();
             }
-
-
-
         }
+
         public void agregarMarcas(Marca nueva)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -57,11 +52,9 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally { datos.cerrarConexion(); }
-
         }
 
         public void eliminarMarca(int id)
@@ -72,11 +65,9 @@ namespace Negocio
                 datos.setearConsulta("DELETE FROM MARCAS WHERE Id = @Id");
                 datos.setearParametro("@Id", id);
                 datos.ejecutarAccion();
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally { datos.cerrarConexion(); }
@@ -99,5 +90,6 @@ namespace Negocio
             }
             finally { datos.cerrarConexion(); }
         }
+
     }
 }

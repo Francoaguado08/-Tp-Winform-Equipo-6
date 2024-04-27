@@ -71,6 +71,7 @@ namespace TP_WinformCatalogo
             this.btnModificarArticulo.TabIndex = 3;
             this.btnModificarArticulo.Text = "Modificar";
             this.btnModificarArticulo.UseVisualStyleBackColor = true;
+            this.btnModificarArticulo.Click += new System.EventHandler(this.btnModificarArticulo_Click);
             // 
             // btnEliminarArticulo
             // 

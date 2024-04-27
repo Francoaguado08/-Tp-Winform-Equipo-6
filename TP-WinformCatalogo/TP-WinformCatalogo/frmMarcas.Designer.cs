@@ -81,6 +81,7 @@ namespace TP_WinformCatalogo
             this.btnModificarMarcas.TabIndex = 4;
             this.btnModificarMarcas.Text = "Modificar";
             this.btnModificarMarcas.UseVisualStyleBackColor = true;
+            this.btnModificarMarcas.Click += new System.EventHandler(this.btnModificarMarcas_Click);
             // 
             // btnEliminarMarcas
             // 

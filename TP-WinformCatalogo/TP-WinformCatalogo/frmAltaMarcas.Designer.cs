@@ -97,6 +97,7 @@ namespace TP_WinformCatalogo
             this.Name = "frmAltaMarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAltaMarcas";
+            this.Load += new System.EventHandler(this.frmAltaMarcas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

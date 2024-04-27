@@ -15,18 +15,13 @@ namespace TP_WinformCatalogo
 {
     public partial class frmMarcas : Form
     {
-
-
         private List<Marca> listaMarca;
-        
         
         public frmMarcas()
         {
             InitializeComponent();
             txtFiltroMarca.KeyPress += txtFiltroMarca_KeyPress;
-
         }
-
 
         private void cargar()
         {
@@ -35,30 +30,19 @@ namespace TP_WinformCatalogo
 
             try
             {
-
                 listaMarca = negocio.listar(); // Asigna los datos obtenidos de la base de datos a listaArticulo
 
-                dgvMarcas.DataSource = listaMarca; // Asigna listaArticulo como origen de datos para el DataGridView
-
-                
-
-
-              
+                dgvMarcas.DataSource = listaMarca; // Asigna listaArticulo como origen de datos para el DataGridView         
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }
 
-
-
-
         private void frmMarcas_Load(object sender, EventArgs e)
         {
-            cargar();
-            
+            cargar();       
         }
 
         private void btnAgregarMarcas_Click(object sender, EventArgs e)
@@ -87,7 +71,6 @@ namespace TP_WinformCatalogo
             {
                 MessageBox.Show(ex.ToString());
             }
-
         }
 
         private void txtFiltroMarca_TextChanged(object sender, EventArgs e)
@@ -103,10 +86,8 @@ namespace TP_WinformCatalogo
             {
                 listaFiltrada = listaMarca;
             }
-
             dgvMarcas.DataSource = null;
-            dgvMarcas.DataSource = listaFiltrada;
-            
+            dgvMarcas.DataSource = listaFiltrada;         
         }
 
         private void dgvMarcas_SelectionChanged(object sender, EventArgs e)
@@ -114,8 +95,7 @@ namespace TP_WinformCatalogo
             if (dgvMarcas.CurrentRow != null)
             {
                 //current row (la fila actual) // dataBoundItem (dame el objeto enlazado).
-                Marca seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
-                
+                Marca seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;        
             }
         }
 
@@ -128,7 +108,16 @@ namespace TP_WinformCatalogo
                 e.Handled = true;
             }
         }
-    }
-    
+
+        private void btnModificarMarcas_Click(object sender, EventArgs e)
+        {
+            Marca seleccionada;
+            seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+
+            frmAltaMarcas modificar = new frmAltaMarcas(seleccionada);
+            modificar.ShowDialog();
+            cargar();
+        }
+    } 
 }
 

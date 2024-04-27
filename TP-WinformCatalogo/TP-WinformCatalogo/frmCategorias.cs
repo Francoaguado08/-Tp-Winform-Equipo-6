@@ -14,18 +14,13 @@ namespace TP_WinformCatalogo
 {
     public partial class frmCategorias : Form
     {
-
-
-
         private List<Categoria> listaCategorias;
-
 
         public frmCategorias()
         {
             InitializeComponent();
             txtFiltroCategoria.KeyPress += txtFiltroCategoria_KeyPress;
         }
-
 
         private void cargar()
         {
@@ -34,25 +29,15 @@ namespace TP_WinformCatalogo
 
             try
             {
-
                 listaCategorias = negocio.listar(); // Asigna los datos obtenidos de la base de datos a listaArticulo
 
                 dgvCategorias.DataSource = listaCategorias; // Asigna listaArticulo como origen de datos para el DataGridView
-
-
-
-
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }
-
-
-
 
         private void frmCategorias_Load(object sender, EventArgs e)
         {
@@ -85,11 +70,7 @@ namespace TP_WinformCatalogo
             {
                 MessageBox.Show(ex.ToString());
             }
-
-        }
-
-      
-        
+        }         
         
         private void dgvCategorias_SelectionChanged(object sender, EventArgs e)
         {
@@ -97,7 +78,6 @@ namespace TP_WinformCatalogo
             {
                 //current row (la fila actual) // dataBoundItem (dame el objeto enlazado).
                 Categoria seleccionado = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-
             }
         }
 
@@ -114,10 +94,8 @@ namespace TP_WinformCatalogo
             {
                 listaFiltrada = listaCategorias;
             }
-
             dgvCategorias.DataSource = null;
             dgvCategorias.DataSource = listaFiltrada;
-
         }
 
         private void txtFiltroCategoria_KeyPress(object sender, KeyPressEventArgs e)
@@ -128,6 +106,16 @@ namespace TP_WinformCatalogo
                 // Si es un dígito numérico, cancelar el evento KeyPress para evitar que se escriba en el TextBox
                 e.Handled = true;
             }
+        }
+
+        private void btnModificarCategorias_Click(object sender, EventArgs e)
+        {
+            Categoria seleccionada;
+            seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+
+            frmAltaCategorias modificar = new frmAltaCategorias(seleccionada);
+            modificar.ShowDialog();
+            cargar();
         }
     }
 }

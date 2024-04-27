@@ -58,6 +58,7 @@ namespace TP_WinformCatalogo
             this.btnModificarCategorias.TabIndex = 18;
             this.btnModificarCategorias.Text = "Modificar";
             this.btnModificarCategorias.UseVisualStyleBackColor = true;
+            this.btnModificarCategorias.Click += new System.EventHandler(this.btnModificarCategorias_Click);
             // 
             // btnAgregarCategorias
             // 
