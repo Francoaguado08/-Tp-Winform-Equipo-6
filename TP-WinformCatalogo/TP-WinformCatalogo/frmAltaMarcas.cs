@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
@@ -50,11 +51,23 @@ namespace TP_WinformCatalogo
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             MarcasNegocio negocio = new MarcasNegocio();
+            Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
 
             try
             {
                 if (marca == null)
                     marca = new Marca();
+
+                if (string.IsNullOrEmpty(txtDescripcion.Text))
+                {
+                    MessageBox.Show("⚠ No se ingreso ninguna descripcion ⚠");
+                    return;
+                }
+                else if (!regex.IsMatch(txtDescripcion.Text))
+                {
+                    MessageBox.Show("⚠ La descripcion no permite caracteres especiales ⚠");
+                    return;
+                }
 
                 marca.Descripcion = txtDescripcion.Text;
 
@@ -75,5 +88,6 @@ namespace TP_WinformCatalogo
                 MessageBox.Show(ex.ToString());
             }
         }
+
     }
 }

@@ -35,10 +35,23 @@ namespace TP_WinformCatalogo
         {
             CategoriaNegocio negocio = new CategoriaNegocio();
 
+            Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
+
             try
             {
                 if (categoria == null)
                     categoria = new Categoria();
+
+                if (string.IsNullOrEmpty(txtDescripcion.Text))
+                {
+                    MessageBox.Show("⚠️ No se ingreso ninguna DESCRIPCION ⚠️");
+                    return;
+                }
+                else if (!regex.IsMatch(txtDescripcion.Text))
+                {
+                    MessageBox.Show("⚠️ El contenido no permite caracteres especiales ⚠️");
+                    return;
+                }
 
                 categoria.Descripcion = txtDescripcion.Text;
 
@@ -60,5 +73,20 @@ namespace TP_WinformCatalogo
             }
         }
 
+        private void frmAltaCategorias_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (categoria != null)
+                {
+                    txtDescripcion.Text = categoria.Descripcion;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

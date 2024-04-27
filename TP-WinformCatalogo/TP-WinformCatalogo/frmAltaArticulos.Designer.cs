@@ -264,7 +264,7 @@ namespace TP_WinformCatalogo
             this.MinimumSize = new System.Drawing.Size(562, 645);
             this.Name = "frmAltaArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Articulo Nuevo";
+            this.Text = "AltaArticulos";
             this.Load += new System.EventHandler(this.frmAltaArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAltaArticulo)).EndInit();
             this.ResumeLayout(false);

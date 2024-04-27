@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
@@ -62,15 +63,45 @@ namespace TP_WinformCatalogo
         {
             //Articulo arti = new Articulo();
             ArticuloNegocio negocio = new ArticuloNegocio();
+            Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
 
             try
             {
                 if (articulo == null)
                     articulo = new Articulo();
 
+
+                if (string.IsNullOrEmpty(txtNombre.Text))
+                {
+                    MessageBox.Show("⚠️ No se ha ingresado ningun NOMBRE ⚠️");
+                    return;
+                }
+                else if (!regex.IsMatch(txtNombre.Text))
+                {
+                    MessageBox.Show("⚠️ 'NOMBRE' no permite caracteres especiales ⚠️");
+                    return;
+                }
                 articulo.Nombre = txtNombre.Text;
+
+                if (string.IsNullOrEmpty(txtCodigo.Text))
+                {
+                    MessageBox.Show("⚠️ No se ha ingresado ningun CODIGO ⚠️");
+                    return;
+                }
+                else if (!regex.IsMatch(txtCodigo.Text))
+                {
+                    MessageBox.Show("⚠️ 'CODIGO' no permite caracteres especiales ⚠️");
+                    return;
+                }
                 articulo.Codigo = txtCodigo.Text;
+
+                if (!regex.IsMatch(txtDescripcion.Text))
+                {
+                    MessageBox.Show("⚠️ 'DESCRIPCION' no permite caracteres especiales ⚠️");
+                    return;
+                }
                 articulo.Descripcion = txtDescripcion.Text;
+
                 articulo.UrlImagen = txtUrlImagen.Text;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
                 articulo.Marca = (Marca)cboMarca.SelectedItem;
@@ -133,6 +164,7 @@ namespace TP_WinformCatalogo
         {
             btnCancelar.FlatAppearance.BorderColor = Color.Red;
         }
+
 
     }
 }
