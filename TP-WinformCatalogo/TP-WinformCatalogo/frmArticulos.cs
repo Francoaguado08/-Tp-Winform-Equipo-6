@@ -131,6 +131,9 @@ namespace TP_WinformCatalogo
         {
             dgvArticulos.Columns["UrlImagen"].Visible = false;
             dgvArticulos.Columns["Id"].Visible = false;
+            dgvArticulos.Columns["Codigo"].Visible = false;
+            dgvArticulos.Columns["Descripcion"].Visible = false;
+            dgvArticulos.Columns["Categoria"].Visible = false;
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
@@ -160,6 +163,20 @@ namespace TP_WinformCatalogo
             frmAltaArticulos modificar = new frmAltaArticulos(seleccionado);
             modificar.ShowDialog();
             cargar();
+        }
+
+        private void chkbVerDetalle_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkbVerDetalle.Checked)
+            {
+                dgvArticulos.Columns["Codigo"].Visible = true;
+                dgvArticulos.Columns["Descripcion"].Visible = true;
+                dgvArticulos.Columns["Categoria"].Visible = true;
+            }
+            else
+            {
+                ocultarColumnas();
+            }
         }
 
         //Validar que en mi filtro no pueda escribir numero.
