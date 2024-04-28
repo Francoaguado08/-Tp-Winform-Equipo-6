@@ -54,7 +54,7 @@ namespace TP_WinformCatalogo
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(14, 120);
+            this.lblNombre.Location = new System.Drawing.Point(24, 120);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(101, 27);
@@ -65,7 +65,7 @@ namespace TP_WinformCatalogo
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(26, 59);
+            this.lblCodigo.Location = new System.Drawing.Point(32, 59);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(89, 27);
@@ -76,7 +76,7 @@ namespace TP_WinformCatalogo
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(1, 184);
+            this.lblDescripcion.Location = new System.Drawing.Point(16, 184);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(114, 24);
@@ -87,7 +87,7 @@ namespace TP_WinformCatalogo
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(35, 303);
+            this.lblPrecio.Location = new System.Drawing.Point(42, 303);
             this.lblPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(80, 27);
@@ -184,7 +184,7 @@ namespace TP_WinformCatalogo
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(40, 364);
+            this.lblMarca.Location = new System.Drawing.Point(47, 364);
             this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(75, 27);
@@ -195,7 +195,7 @@ namespace TP_WinformCatalogo
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(6, 429);
+            this.lblCategoria.Location = new System.Drawing.Point(16, 429);
             this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(109, 27);
@@ -206,7 +206,7 @@ namespace TP_WinformCatalogo
             // 
             this.lblUrlImagen.AutoSize = true;
             this.lblUrlImagen.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUrlImagen.Location = new System.Drawing.Point(-3, 246);
+            this.lblUrlImagen.Location = new System.Drawing.Point(16, 246);
             this.lblUrlImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUrlImagen.Name = "lblUrlImagen";
             this.lblUrlImagen.Size = new System.Drawing.Size(118, 24);

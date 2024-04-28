@@ -40,7 +40,11 @@ namespace TP_WinformCatalogo
             try
             {
                 cboMarca.DataSource = marcasNegocio.listar();
+                cboMarca.ValueMember = "Descripcion";
+                cboMarca.DisplayMember = "Descripcion";
                 cboCategoria.DataSource = categoriaNegocio.listar();    
+                cboCategoria.ValueMember = "Descripcion";
+                cboCategoria.DisplayMember = "Descripcion";
 
                 if(articulo != null)
                 {
@@ -49,6 +53,8 @@ namespace TP_WinformCatalogo
                     txtDescripcion.Text = articulo.Descripcion;
                     txtPrecio.Text = articulo.Precio.ToString();
                     txtUrlImagen.Text = articulo.UrlImagen;
+                    cboCategoria.SelectedValue = articulo.Categoria.Descripcion;
+                    cboMarca.SelectedValue = articulo.Marca.Descripcion;
                     cargarImagen(articulo.UrlImagen);
                 }
 
