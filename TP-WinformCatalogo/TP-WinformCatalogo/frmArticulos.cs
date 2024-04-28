@@ -11,7 +11,6 @@ using Negocio;
 using Dominio;
 
 
-
 namespace TP_WinformCatalogo
 {
     public partial class frmArticulos : Form

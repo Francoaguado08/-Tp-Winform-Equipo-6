@@ -20,6 +20,7 @@ namespace TP_WinformCatalogo
         {
             InitializeComponent();
         }
+
         public frmAltaArticulos(Articulo articulo)
         {
             InitializeComponent();
@@ -57,7 +58,6 @@ namespace TP_WinformCatalogo
                     cboMarca.SelectedValue = articulo.Marca.Descripcion;
                     cargarImagen(articulo.UrlImagen);
                 }
-
             }
             catch (Exception ex)
             {

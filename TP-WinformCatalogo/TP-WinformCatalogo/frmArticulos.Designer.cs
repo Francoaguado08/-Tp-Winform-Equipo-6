@@ -29,6 +29,7 @@ namespace TP_WinformCatalogo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArticulos));
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
             this.btnModificarArticulo = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@ namespace TP_WinformCatalogo
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.Location = new System.Drawing.Point(16, 119);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersWidth = 51;
@@ -57,7 +58,7 @@ namespace TP_WinformCatalogo
             // 
             this.btnAgregarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarArticulo.Location = new System.Drawing.Point(16, 452);
-            this.btnAgregarArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
             this.btnAgregarArticulo.Size = new System.Drawing.Size(148, 46);
             this.btnAgregarArticulo.TabIndex = 2;
@@ -69,7 +70,7 @@ namespace TP_WinformCatalogo
             // 
             this.btnModificarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificarArticulo.Location = new System.Drawing.Point(197, 452);
-            this.btnModificarArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificarArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(148, 46);
             this.btnModificarArticulo.TabIndex = 3;
@@ -81,7 +82,7 @@ namespace TP_WinformCatalogo
             // 
             this.btnEliminarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarArticulo.Location = new System.Drawing.Point(381, 452);
-            this.btnEliminarArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
             this.btnEliminarArticulo.Size = new System.Drawing.Size(148, 46);
             this.btnEliminarArticulo.TabIndex = 4;
@@ -92,6 +93,7 @@ namespace TP_WinformCatalogo
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
+            this.lblFiltro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblFiltro.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFiltro.Location = new System.Drawing.Point(16, 74);
             this.lblFiltro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -103,7 +105,7 @@ namespace TP_WinformCatalogo
             // pbxArticulo
             // 
             this.pbxArticulo.Location = new System.Drawing.Point(753, 120);
-            this.pbxArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(308, 300);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,7 +115,7 @@ namespace TP_WinformCatalogo
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(155, 79);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(265, 22);
             this.txtFiltro.TabIndex = 17;
@@ -135,6 +137,7 @@ namespace TP_WinformCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1064, 542);
             this.Controls.Add(this.chkbVerDetalle);
             this.Controls.Add(this.txtFiltro);
@@ -144,7 +147,7 @@ namespace TP_WinformCatalogo
             this.Controls.Add(this.btnModificarArticulo);
             this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.dgvArticulos);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1082, 589);
             this.MinimumSize = new System.Drawing.Size(1082, 589);
             this.Name = "frmArticulos";

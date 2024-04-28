@@ -29,44 +29,47 @@ namespace TP_WinformCatalogo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMarcas));
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.lblMarcas = new System.Windows.Forms.Label();
             this.btnAgregarMarcas = new System.Windows.Forms.Button();
             this.btnModificarMarcas = new System.Windows.Forms.Button();
             this.btnEliminarMarcas = new System.Windows.Forms.Button();
-            this.pictureBoxMarcas = new System.Windows.Forms.PictureBox();
             this.txtFiltroMarca = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMarcas)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvMarcas
             // 
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(6, 100);
+            this.dgvMarcas.Location = new System.Drawing.Point(8, 123);
+            this.dgvMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.ReadOnly = true;
             this.dgvMarcas.RowHeadersWidth = 51;
-            this.dgvMarcas.Size = new System.Drawing.Size(547, 244);
+            this.dgvMarcas.Size = new System.Drawing.Size(729, 300);
             this.dgvMarcas.TabIndex = 1;
             this.dgvMarcas.SelectionChanged += new System.EventHandler(this.dgvMarcas_SelectionChanged);
             // 
             // lblMarcas
             // 
             this.lblMarcas.AutoSize = true;
+            this.lblMarcas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(234)))), ((int)(((byte)(192)))));
             this.lblMarcas.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcas.Location = new System.Drawing.Point(6, 60);
+            this.lblMarcas.Location = new System.Drawing.Point(8, 74);
+            this.lblMarcas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarcas.Name = "lblMarcas";
-            this.lblMarcas.Size = new System.Drawing.Size(173, 25);
+            this.lblMarcas.Size = new System.Drawing.Size(223, 32);
             this.lblMarcas.TabIndex = 2;
             this.lblMarcas.Text = "Buscar Marca:";
             // 
             // btnAgregarMarcas
             // 
             this.btnAgregarMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarMarcas.Location = new System.Drawing.Point(18, 367);
+            this.btnAgregarMarcas.Location = new System.Drawing.Point(24, 452);
+            this.btnAgregarMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregarMarcas.Name = "btnAgregarMarcas";
-            this.btnAgregarMarcas.Size = new System.Drawing.Size(111, 37);
+            this.btnAgregarMarcas.Size = new System.Drawing.Size(148, 46);
             this.btnAgregarMarcas.TabIndex = 3;
             this.btnAgregarMarcas.Text = "Agregar";
             this.btnAgregarMarcas.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@ namespace TP_WinformCatalogo
             // btnModificarMarcas
             // 
             this.btnModificarMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificarMarcas.Location = new System.Drawing.Point(148, 367);
+            this.btnModificarMarcas.Location = new System.Drawing.Point(197, 452);
+            this.btnModificarMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificarMarcas.Name = "btnModificarMarcas";
-            this.btnModificarMarcas.Size = new System.Drawing.Size(111, 37);
+            this.btnModificarMarcas.Size = new System.Drawing.Size(148, 46);
             this.btnModificarMarcas.TabIndex = 4;
             this.btnModificarMarcas.Text = "Modificar";
             this.btnModificarMarcas.UseVisualStyleBackColor = true;
@@ -86,50 +90,44 @@ namespace TP_WinformCatalogo
             // btnEliminarMarcas
             // 
             this.btnEliminarMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarMarcas.Location = new System.Drawing.Point(286, 367);
+            this.btnEliminarMarcas.Location = new System.Drawing.Point(381, 452);
+            this.btnEliminarMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminarMarcas.Name = "btnEliminarMarcas";
-            this.btnEliminarMarcas.Size = new System.Drawing.Size(111, 37);
+            this.btnEliminarMarcas.Size = new System.Drawing.Size(148, 46);
             this.btnEliminarMarcas.TabIndex = 5;
             this.btnEliminarMarcas.Text = "Eliminar";
             this.btnEliminarMarcas.UseVisualStyleBackColor = true;
             this.btnEliminarMarcas.Click += new System.EventHandler(this.btnEliminarMarcas_Click);
             // 
-            // pictureBoxMarcas
-            // 
-            this.pictureBoxMarcas.Location = new System.Drawing.Point(572, 100);
-            this.pictureBoxMarcas.Name = "pictureBoxMarcas";
-            this.pictureBoxMarcas.Size = new System.Drawing.Size(222, 244);
-            this.pictureBoxMarcas.TabIndex = 7;
-            this.pictureBoxMarcas.TabStop = false;
-            // 
             // txtFiltroMarca
             // 
-            this.txtFiltroMarca.Location = new System.Drawing.Point(176, 60);
+            this.txtFiltroMarca.Location = new System.Drawing.Point(235, 74);
+            this.txtFiltroMarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFiltroMarca.Name = "txtFiltroMarca";
-            this.txtFiltroMarca.Size = new System.Drawing.Size(211, 20);
+            this.txtFiltroMarca.Size = new System.Drawing.Size(280, 22);
             this.txtFiltroMarca.TabIndex = 11;
             this.txtFiltroMarca.TextChanged += new System.EventHandler(this.txtFiltroMarca_TextChanged);
             this.txtFiltroMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltroMarca_KeyPress);
             // 
             // frmMarcas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 448);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1064, 542);
             this.Controls.Add(this.txtFiltroMarca);
-            this.Controls.Add(this.pictureBoxMarcas);
             this.Controls.Add(this.btnEliminarMarcas);
             this.Controls.Add(this.btnModificarMarcas);
             this.Controls.Add(this.btnAgregarMarcas);
             this.Controls.Add(this.lblMarcas);
             this.Controls.Add(this.dgvMarcas);
-            this.MaximumSize = new System.Drawing.Size(816, 487);
-            this.MinimumSize = new System.Drawing.Size(816, 487);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(1082, 589);
+            this.MinimumSize = new System.Drawing.Size(1082, 589);
             this.Name = "frmMarcas";
             this.Text = "Marcas";
             this.Load += new System.EventHandler(this.frmMarcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMarcas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,7 +139,6 @@ namespace TP_WinformCatalogo
         private System.Windows.Forms.Button btnAgregarMarcas;
         private System.Windows.Forms.Button btnModificarMarcas;
         private System.Windows.Forms.Button btnEliminarMarcas;
-        private System.Windows.Forms.PictureBox pictureBoxMarcas;
         private System.Windows.Forms.TextBox txtFiltroMarca;
     }
 }
