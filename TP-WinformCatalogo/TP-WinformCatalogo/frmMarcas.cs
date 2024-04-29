@@ -62,9 +62,16 @@ namespace TP_WinformCatalogo
                 DialogResult respuesta = MessageBox.Show("Confirme nuevamente si quiere eliminarlo.", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (respuesta == DialogResult.Yes)
                 {
-                    seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
-                    negocio.eliminarMarca(seleccionada.ID);
-                    cargar();
+                    if (dgvMarcas.CurrentRow != null)
+                    {
+                        seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                        negocio.eliminarMarca(seleccionada.ID);
+                        cargar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha seleccionado ninguna marca para eliminar");
+                    }
                 }
             }
             catch (Exception ex)
@@ -111,12 +118,19 @@ namespace TP_WinformCatalogo
 
         private void btnModificarMarcas_Click(object sender, EventArgs e)
         {
-            Marca seleccionada;
-            seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+            if(dgvMarcas.CurrentRow != null)
+            {
+                Marca seleccionada;
+                seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
 
-            frmAltaMarcas modificar = new frmAltaMarcas(seleccionada);
-            modificar.ShowDialog();
-            cargar();
+                frmAltaMarcas modificar = new frmAltaMarcas(seleccionada);
+                modificar.ShowDialog();
+                cargar();
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ninguna marca para modificar");
+            }
         }
     } 
 }

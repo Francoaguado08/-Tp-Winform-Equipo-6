@@ -92,9 +92,17 @@ namespace TP_WinformCatalogo
                 DialogResult respuesta = MessageBox.Show("Confirme nuevamente si quiere eliminarlo.", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (respuesta == DialogResult.Yes)
                 {
-                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                    negocio.eliminarArticulo(seleccionado.ID);
-                    cargar();
+                    if(dgvArticulos.CurrentRow != null)
+                    {
+
+                        seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                        negocio.eliminarArticulo(seleccionado.ID);
+                        cargar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha seleccionado ningun articulo para eliminar");
+                    }
                 }
             }
             catch (Exception ex)
@@ -156,12 +164,19 @@ namespace TP_WinformCatalogo
 
         private void btnModificarArticulo_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado;
-            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            if(dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
-            frmAltaArticulos modificar = new frmAltaArticulos(seleccionado);
-            modificar.ShowDialog();
-            cargar();
+                frmAltaArticulos modificar = new frmAltaArticulos(seleccionado);
+                modificar.ShowDialog();
+                cargar();
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ningun articulo para modificar");
+            }
         }
 
         private void chkbVerDetalle_CheckedChanged(object sender, EventArgs e)

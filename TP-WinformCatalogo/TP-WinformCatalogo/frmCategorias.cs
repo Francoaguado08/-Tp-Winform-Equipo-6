@@ -61,9 +61,16 @@ namespace TP_WinformCatalogo
                 DialogResult respuesta = MessageBox.Show("Confirme nuevamente si quiere eliminarlo.", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (respuesta == DialogResult.Yes)
                 {
-                    seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-                    negocio.eliminarCategoria(seleccionada.ID);
-                    cargar();
+                    if(dgvCategorias.CurrentRow != null)
+                    {
+                        seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+                        negocio.eliminarCategoria(seleccionada.ID);
+                        cargar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha seleccionado ninguna categoria para eliminar");
+                    }
                 }
             }
             catch (Exception ex)
@@ -110,12 +117,19 @@ namespace TP_WinformCatalogo
 
         private void btnModificarCategorias_Click(object sender, EventArgs e)
         {
-            Categoria seleccionada;
-            seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+            if(dgvCategorias.CurrentRow != null)
+            {
+                Categoria seleccionada;
+                seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
 
-            frmAltaCategorias modificar = new frmAltaCategorias(seleccionada);
-            modificar.ShowDialog();
-            cargar();
+                frmAltaCategorias modificar = new frmAltaCategorias(seleccionada);
+                modificar.ShowDialog();
+                cargar();
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ninguna categoria para modificar");
+            }
         }
     }
 }
