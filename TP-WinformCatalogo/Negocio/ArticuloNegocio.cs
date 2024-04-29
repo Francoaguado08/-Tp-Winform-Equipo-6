@@ -190,7 +190,7 @@ namespace Negocio
             try
             {
                 datos.setearConsulta("UPDATE ARTICULOS SET IdMarca = @IdMarca WHERE Id = @IdArticulo");
-                datos.setearParametro("@IdArt", modificar.ID);
+                datos.setearParametro("@IdArticulo", modificar.ID);
                 datos.setearParametro("@IdMarca", modificar.Marca.ID);
                 datos.cerrarConexion();
                 datos.ejecutarAccion();

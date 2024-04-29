@@ -67,9 +67,12 @@ namespace TP_WinformCatalogo
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            //Articulo arti = new Articulo();
             ArticuloNegocio negocio = new ArticuloNegocio();
+            // este regex valida que no permita caracteres especiales
             Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
+            // este regex valida que solo se pueden ingresar numeros y , en lugar de .
+            Regex precioRegex = new Regex(@"^\d+(,\d+)?$");
+
 
             try
             {
@@ -109,15 +112,22 @@ namespace TP_WinformCatalogo
                 articulo.Descripcion = txtDescripcion.Text;
 
                 articulo.UrlImagen = txtUrlImagen.Text;
+
+                if (!precioRegex.IsMatch(txtPrecio.Text))
+                {
+                    MessageBox.Show("⚠️ 'PRECIO' solo permite números y comas ⚠️");
+                    return;
+                }
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
+                
                 articulo.Marca = (Marca)cboMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
 
                 if (articulo.ID != 0)
                 {
                     negocio.modificar(articulo);
-                    //negocio.modificarCategoriaArticulo(articulo);
-                    //negocio.modificarMarcaArticulo(articulo); 
+                    negocio.modificarCategoriaArticulo(articulo);
+                    negocio.modificarMarcaArticulo(articulo);
                     MessageBox.Show("Modificado exitosamente");
                 }
                 else
